@@ -1,4 +1,4 @@
-<h1> Theme Settings </h1>
+<h1> Bio Section </h1>
 <?php settings_errors(); ?>
 <!-- <ul>
     <li>

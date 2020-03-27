@@ -220,10 +220,24 @@ if (is_home()) {
                     <h6 class="m-0 font-weight-bold text-primary">Education</h6>
                 </div>
                 <div class="card-body">
-                    <p> 2011 - 2016: </p>
-                    <p> Damascus Univercity - Degree Of Pharmacy - Syria </p>
-                    <p>2018 - ongoing</p>
-                    <p> Kiron Open Hier Education - Assossiate Degree in Computer Science - Germany </p>
+
+
+
+                    <?php
+
+                    global $wpdb;
+                    $row = $wpdb->get_results("SELECT * FROM wp_education");
+                    foreach ($row as $doc) {
+                    ?>
+
+                        <p>
+                            <i class="fas fa-chevron-right"></i>
+                            <?php echo $doc->start; ?> - <?php echo $doc->end; ?>: </p>
+                        <p> <?php echo $doc->degree; ?> - <?php echo $doc->university; ?> - <?php echo $doc->country; ?> .</p>
+
+                    <?php } ?>
+
+
                 </div>
             </div>
 
@@ -234,30 +248,30 @@ if (is_home()) {
                 </div>
                 <div class="card-body">
 
-                            <?php
+                    <?php
 
-                                global $wpdb;
-                                $row = $wpdb->get_results("SELECT * FROM wp_certificates");
-                                foreach ($row as $doc) {
-                            ?>
+                    global $wpdb;
+                    $row = $wpdb->get_results("SELECT * FROM wp_certificates");
+                    foreach ($row as $doc) {
+                    ?>
 
 
-                    <div>
-                        <p style="margin-bottom: 5%;">
-                            <i class="fas fa-chevron-right"></i>
-                            <?php echo $doc->name; ?> -  <?php echo $doc->provider; ?> (  <?php echo $doc->host; ?> )
-                            &nbsp;
-                            <a href=" <?php echo $doc->url; ?>" title="visit course page" target="_blank">
-                                <button class="btn btn-link text-muted">
-                                    <i class="fas fa-external-link-alt"> visit</i>
-                                </button></a>
-                            <a title="view certificate" href="#">
-                                <button class="btn btn-link text-muted">
-                                    <i class="fas fa-graduation-cap"> details</i>
-                                </button>
-                            </a>
-                        </p>
-                    </div>
+                        <div>
+                            <p style="margin-bottom: 5%;">
+                                <i class="fas fa-chevron-right"></i>
+                                <?php echo $doc->name; ?> - <?php echo $doc->provider; ?> ( <?php echo $doc->host; ?> )
+                                &nbsp;
+                                <a href=" <?php echo $doc->url; ?>" title="visit course page" target="_blank">
+                                    <button class="btn btn-link text-muted">
+                                        <i class="fas fa-external-link-alt"> visit</i>
+                                    </button></a>
+                                <a title="view certificate" href="#">
+                                    <button class="btn btn-link text-muted">
+                                        <i class="fas fa-graduation-cap"> details</i>
+                                    </button>
+                                </a>
+                            </p>
+                        </div>
 
                     <?php } ?>
 

@@ -11,7 +11,7 @@ get_header()
 <!-- <article class="post"> -->
 <!-- //         <a href="<?php // the_permalink(); 
                             ?>"  class="title" ><h1><?php // the_title(); 
-                                                                            ?>
+                                                    ?>
 </h1></a> -->
 <!-- <h2><?php // the_content();
             ?> </h2> -->
@@ -233,16 +233,34 @@ if (is_home()) {
                     <h6 class="m-0 font-weight-bold text-primary"> Certificates </h6>
                 </div>
                 <div class="card-body">
-                    <ul>
-                        <li> Full Stack - FreeCodeCamp </li>
-                        <li> Express - HongKong Univercity (coursera) </li>
-                        <li> PHP stack - Univercity of Mitchigan (coursera) </li>
-                        <li> CS50 - Harvard Univercity (EDX) </li>
-                        <li> Front End Specilaization - Univercity of Mitchigan (coursera </li>
-                        <li> Mathematical thinking in comuter science </li>
-                        <li> Computer Science 101 - Stranford Univercity (online)</li>
-                        <li>HTML, CSS, and Javascript for Web Developers - Johns Hopkins University (coursera)</li>
-                    </ul>
+
+                            <?php
+
+                                global $wpdb;
+                                $row = $wpdb->get_results("SELECT * FROM wp_certificates");
+                                foreach ($row as $doc) {
+                            ?>
+
+
+                    <div>
+                        <p style="margin-bottom: 5%;">
+                            <i class="fas fa-chevron-right"></i>
+                            <?php echo $doc->name; ?> -  <?php echo $doc->provider; ?> (  <?php echo $doc->host; ?> )
+                            &nbsp;
+                            <a href=" <?php echo $doc->url; ?>" title="visit course page" target="_blank">
+                                <button class="btn btn-link text-muted">
+                                    <i class="fas fa-external-link-alt"> visit</i>
+                                </button></a>
+                            <a title="view certificate" href="#">
+                                <button class="btn btn-link text-muted">
+                                    <i class="fas fa-graduation-cap"> details</i>
+                                </button>
+                            </a>
+                        </p>
+                    </div>
+
+                    <?php } ?>
+
                 </div>
             </div>
 

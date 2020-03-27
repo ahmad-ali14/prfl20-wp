@@ -8,6 +8,11 @@ function add_admin_options (){
     add_menu_page('projects', 'projects', 'manage_options', 'projects', 'projects', 'dashicons-admin-post', 6);
     
     add_submenu_page('projects', 'Add new project', 'Add new project', 'manage_options', 'add-new-project', 'add_new_project');
+
+    add_menu_page('certificates', 'certificates', 'manage_options', 'certificates', 'certificates', 'dashicons-admin-post', 6);
+
+    add_submenu_page('certificates', 'Add new certificate', 'Add new certificate', 'manage_options', 'add-new-certificate', 'add_new_certificate');
+
 }
 
 add_action('admin_menu', 'add_admin_options');
@@ -52,6 +57,16 @@ function projects (){
 
 function add_new_project (){
     require_once( get_template_directory().'/templates/static/add_project.php');
+
+}
+
+function certificates (){
+    require_once( get_template_directory().'/templates/static/certificates.php');
+
+}
+
+function add_new_certificate (){
+    require_once( get_template_directory().'/templates/static/add_certificate.php');
 
 }
 

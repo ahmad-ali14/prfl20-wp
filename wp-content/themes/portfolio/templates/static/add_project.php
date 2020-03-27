@@ -24,6 +24,16 @@ if (isset($_GET['id'])) {
     // }
     $name = $pr[0]->name;
     $lang = $pr[0]->languages;
+    $url = $pr[0]->url;
+    $git = $pr[0]->github;
+    $video = $pr[0]->video;
+    $summary = $pr[0]->summary;
+    $date = $pr[0]->date;
+    $fontAwesome = $pr[0]->fontAwesome;
+
+
+
+
 
 ?>
 
@@ -41,23 +51,32 @@ if (isset($_GET['id'])) {
         </label> <br /> <br />
 
         <label for="pr-url">Project URL:
-            <input type="text" name="pr-url" value="<?php echo $pr[0]->url  ?? '' ?>" size="50">
+            <input type="text" name="pr-url" value="<?php echo $url ?>" size="50">
         </label> <br /> <br />
 
         <label for="pr-github">Github URL:
-            <input type="text" name="pr-github" value="<?php echo $pr[0]->github  ?? '' ?>" size="50">
+            <input type="text" name="pr-github" value="<?php echo $git ?>" size="50">
         </label> <br /> <br />
 
         <label for="pr-video">video URL:
-            <input type="text" name="pr-video" value="<?php echo $pr[0]->video  ?? '' ?>" size="50">
+            <input type="text" name="pr-video" value="<?php echo $video ?>" size="50">
+        </label> <br /> <br />
+
+
+        <label for="pr-awesome">Font Awesome Class:
+            <input type="text" name="pr-awesome" value="<?php echo $fontAwesome ?>" size="50">
+        </label> <br /> <br />
+
+        <label for="pr-date">project date:
+            <input type="text" name="pr-date" value="<?php echo $date ?>" size="50">
         </label> <br /> <br />
 
 
         <label for="pr-sum">Project Summary:
-            <textarea type="text" name="pr-sum" value="<?php echo $pr[0]->summary ?>" cols=50 rows=5> <?php echo $pr[0]->summary ?></textarea>
+            <textarea type="text" name="pr-sum" value="<?php echo $summary ?>" cols=50 rows=5> <?php echo $summary ?></textarea>
         </label> <br /> <br />
 
-         <input type="hidden" name="id" value="<?php echo $pr[0]->id  ?? '' ?>" size="50">
+         <input type="hidden" name="id" value="<?php echo $id ?>" size="50">
 
         <?php //} ?>
 
@@ -101,8 +120,8 @@ if (isset($_GET['id'])) {
 
 if (isset($_POST['add'])) {
 
-  //  print_r($_POST);
-   // print_r('add');
+   print_r($_POST);
+   print_r('\n add');
 
     // if (
     //     empty($_POST["name"]) || empty($_POST["pr-lang"]) || empty($_POST["pr-url"])
@@ -123,7 +142,7 @@ if (isset($_POST['add'])) {
 
 
 
-    global $wpdb, $name, $lang, $url, $github, $video, $sum;
+    global $wpdb, $name, $lang, $url, $github, $video, $sum, $date, $awesome;
 
    // print_r($name, $lang, $url, $github, $video, $sum);
     // Get form values.
@@ -133,6 +152,9 @@ if (isset($_POST['add'])) {
     $github = (!empty($_POST['pr-github'])) ? sanitize_text_field($_POST['pr-github']) : '';
     $video = (!empty($_POST['pr-video'])) ? sanitize_text_field($_POST['pr-video']) : '';
     $sum = (!empty($_POST['pr-sum'])) ? sanitize_text_field($_POST['pr-sum']) : '';
+    $date = (!empty($_POST['pr-date'])) ? sanitize_text_field($_POST['pr-date']) : '';
+    $awesome = (!empty($_POST['pr-awesome'])) ? sanitize_text_field($_POST['pr-awesome']) : '';
+
 
 
 
@@ -147,7 +169,9 @@ if (isset($_POST['add'])) {
             'url' => $url,
             'github' => $github,
             'video' => $video,
-            'summary' => $sum
+            'summary' => $sum,
+            'date' => $date,
+            'fontAwesome' => $awesome
         )
     );
 }
@@ -155,8 +179,8 @@ if (isset($_POST['add'])) {
 
 if (isset($_POST['edit'])) {
     
-    //print_r($_POST);
-   // print_r('edit');
+    print_r($_POST);
+     print_r('\n edit');
     global $wpdb, $name, $lang, $url, $github, $video, $sum;
 
     // if (
@@ -177,7 +201,8 @@ $url = (!empty($_POST['pr-url'])) ? sanitize_text_field($_POST['pr-url']) : '';
 $github = (!empty($_POST['pr-github'])) ? sanitize_text_field($_POST['pr-github']) : '';
 $video = (!empty($_POST['pr-video'])) ? sanitize_text_field($_POST['pr-video']) : '';
 $sum = (!empty($_POST['pr-sum'])) ? sanitize_text_field($_POST['pr-sum']) : '';
-
+$date = (!empty($_POST['pr-date'])) ? sanitize_text_field($_POST['pr-date']) : '';
+$awesome = (!empty($_POST['pr-awesome'])) ? sanitize_text_field($_POST['pr-awesome']) : '';
 
 
 $table_name = $wpdb->prefix . "projects";
@@ -193,7 +218,9 @@ array(
     'url' => $url,
     'github' => $github,
     'video' => $video,
-    'summary' => $sum
+    'summary' => $sum,
+    'date' => $date,
+    'fontAwesome' => $awesome
 
 ),
 array('ID'=>$id), array("%s"), array("%d"));

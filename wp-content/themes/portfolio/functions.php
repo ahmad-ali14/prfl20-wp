@@ -12,6 +12,10 @@ function wpa_90820() {
     wp_enqueue_script('bootstrap', get_stylesheet_directory_uri() .'/vendor/bootstrap/js/bootstrap.bundle.min.js', array() );
     wp_enqueue_script('bootstrap', get_stylesheet_directory_uri() .'/vendor/jquery-easing/jquery.easing.min.js', array() );
     wp_enqueue_script('bootstrap', get_stylesheet_directory_uri() .'/js/sb-admin-2.min.js', array() );
+    wp_enqueue_script('fontAwesome', " https://kit.fontawesome.com/1c03bf9151.js", array() );
+
+
+   
       
 }
 

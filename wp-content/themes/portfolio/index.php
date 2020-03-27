@@ -31,104 +31,16 @@ get_header()
     // echo  '</div>';
 }
 
-if (is_home()) {
-    // echo '<div id="gray-banner">'.get_option('blackBox').'</div>';
-}
-
-
 ?>
-<br />
-<br />
+
 <!-- Begin Page Content -->
 <div class="container-fluid" style="padding-left: 10%; padding-right: 10%;">
 
     <!-- Page Heading -->
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Welcome ...</h1>
-        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Drop A message </a>
-    </div>
+    <div class="d-sm-flex align-items-center justify-content-between mb-4"><h1 class="h3 mb-0 text-gray-800">Welcome ... How can I help ??</h1></div>
 
     <!-- Content Row -->
-    <div class="row">
-
-        <!-- Earnings (Monthly) Card Example -->
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Lines Coded</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">+20,000</div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Earnings (Monthly) Card Example -->
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-success shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Courses Attended</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">+40</div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Earnings (Monthly) Card Example -->
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-info shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Towards Goal</div>
-                            <div class="row no-gutters align-items-center">
-                                <div class="col-auto">
-                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">40%</div>
-                                </div>
-                                <div class="col">
-                                    <div class="progress progress-sm mr-2">
-                                        <div class="progress-bar bg-info" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Pending Requests Card Example -->
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-warning shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Projects Done</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">+50</div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-comments fa-2x text-gray-300"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
+<div class="row"><div class="col-xl-3 col-md-6 mb-4"><div class="card border-left-primary shadow h-100 py-2"><div class="card-body"><div class="row no-gutters align-items-center"><div class="col mr-2"><div class="text-sm font-weight-bold text-primary text-uppercase mb-1">Lines Coded</div><div class="h5 mb-0 font-weight-bold text-gray-800">+100K</div></div><div class="col-auto"><i class="fas fa-code fa-2x text-gray-300"></i></div></div></div></div></div><div class="col-xl-3 col-md-6 mb-4"><div class="card border-left-success shadow h-100 py-2"><div class="card-body"><div class="row no-gutters align-items-center"><div class="col mr-2"><div class="text-sm font-weight-bold text-success text-uppercase mb-1">Courses Attended</div><div class="h5 mb-0 font-weight-bold text-gray-800">+40</div></div><div class="col-auto"><i class="fas fa-certificate fa-2x text-gray-300"></i></div></div></div></div></div><div class="col-xl-3 col-md-6 mb-4"><div class="card border-left-info shadow h-100 py-2"><div class="card-body"><div class="row no-gutters align-items-center"><div class="col mr-2"><div class="text-sm font-weight-bold text-info text-uppercase mb-1">Towards Goal</div><div class="row no-gutters align-items-center"><div class="col-auto"><div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">40%</div></div><div class="col"><div class="progress progress-sm mr-2"><div class="progress-bar bg-info" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%;"></div></div></div></div></div><div class="col-auto"><i class="fas fa-bullseye fa-2x text-gray-300"></i></div></div></div></div></div><div class="col-xl-3 col-md-6 mb-4"><div class="card border-left-warning shadow h-100 py-2"><div class="card-body"><div class="row no-gutters align-items-center"><div class="col mr-2"><div class="text-sm font-weight-bold text-warning text-uppercase mb-1">Projects Done</div><div class="h5 mb-0 font-weight-bold text-gray-800">+50</div></div><div class="col-auto"><i class="fas fa-tasks fa-2x text-gray-300"></i></div></div></div></div></div></div>
     <?php
     if (is_home()) {
 
@@ -142,7 +54,7 @@ if (is_home()) {
                         <div class="card-body col col-xl-7 col-lg-7" style="padding-left: 10%; padding-right: 10%;">
                             <h1 class="text_1"> I'm <?php echo get_option('yourName'); ?></h1>
                             <h5> <?php echo get_option('yourRole'); ?> </h5>
-                            <p text-align="justify"> <?php echo get_option('yourBio'); ?> </p>
+                            <p class="p_bio" text-align="justify"> <?php echo get_option('yourBio'); ?> </p>
                             <pre> Location: <?php echo get_option('yourLocation'); ?></pre>
                             <pre> Know Me More..</pre>
 
@@ -216,6 +128,57 @@ if (is_home()) {
             </div>
         </div>
 
+        <style>
+.some_margin{
+  
+}
+.p_bio{
+  text-align: justify; /* For Edge */
+  text-align-last: left;
+}
+
+
+@keyframes typewriter {
+  0%, 100% {
+    width: 0;
+  }
+  20%, 80% {
+    width: 10.2em;
+  }
+}
+
+@keyframes caret {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.text_1 {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typewriter;
+  display: inline-block;
+  position: relative;
+  animation-duration: 10s;
+  animation-timing-function: steps(12, end);
+  animation-iteration-count: 1;
+}
+
+
+/* .text_1::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  animation: caret infinite;
+  animation-duration: 1s;
+  animation-timing-function: steps(12, end);
+} */
+
+
+        </style>
 
 
 
@@ -281,10 +244,9 @@ if (is_home()) {
                     <p> connect to Your MongoDb Atlas - Dev </p>
 
                 </div>
-            </div>
+            </div> -->
 
-
-             -->
+            <div class="card shadow mb-4"><div class="card-header py-3"><h6 class="m-0 font-weight-bold text-primary">Contact Me</h6></div><div class="card-body"><p> You Are Wecome to my space ..</p><p> Tell me about your project and I will give you a reflection, or Just say Hi! </p><br><form><div class="form-group row"><label for="inputEmail" class="col-sm-3 col-md-3 col-form-label">Email: *</label><div class="col-sm-8 col-md-8"><input type="email" class="form-control" id="inputEmail" placeholder="Email" value=""></div></div><div class="form-group row"><label for="inputName" class="col-sm-3 col-md-3 col-form-label">Name: *</label><div class="col-sm-8 col-md-8"><input type="text" class="form-control" id="inputName" placeholder="Name" value=""></div></div><div class="form-group row"><label for="inputMessage" class="col-sm-3 col-md-3 col-form-label">Message: *</label><div class="col-sm-8 col-md-8"><textarea type="text" class="form-control" id="inputMessage" rows="5" cols="33" placeholder="Message"></textarea></div></div><div class="form-group row"><div class="col col-md-4"></div><div class="col-sm-10 col-md-8 "><button type="submit" class="btn btn-primary">Send Message</button></div></div></form></div></div>
 
         </div>
 
@@ -401,14 +363,104 @@ if (is_home()) {
                 </div>
             </div>
 
-
+            <div class="card shadow mb-4"><div class="card-header py-3"><h6 class="m-0 font-weight-bold text-primary">News letter</h6></div><div class="card-body"><p>Join 37 Subscribers to My News Update </p><p> Promise: No more than 1 mail/month. </p><form method="post" action="<?php home_url().'/wp-admin/admin.php'; ?>"><div class="form-group row"><label for="inputEmail" class="col-sm-2 col-md-2 col-form-label">Email *</label><div class="col-sm-10 col-md-8"><input type="email" class="form-control" id="inputEmail" placeholder="Email" name="sub-email" value=""></div></div><div class="form-group row"><div class="col col-md-6"></div><div class="col-sm-10 col-md-6 "><button type="submit" class="btn btn-primary" name="sub">Subscribe</button></div></div></form></div></div>
             <!-- end column -->
         </div>
-        <!-- end row  -->
+        <!-- end row  -->    
     </div>
 
+    <br />
+
+
+    <div class="col col-12 "><hr class="testimonials"><p class="desc ">❤️</p><div class="row tweetForm"><div class="col col-12"><h4 style="text-align: center;">Add Review </h4></div><br><div class="col col-12"><form><div class="row"><div class="col col-4"><div class="form-group row"><label for="inputEmail" class="col col-12">Your Name</label><div class="col col-12"><input type="name" class="form-control" id="inputName" placeholder="Your name is visible" value=""></div></div><div class="form-group row"><label for="inputName" class="col col-12">How do you Know me </label><div class="col col-12"><select id="rel" class="form-control col col-12" name="rel"><option value="I worked directly for You">I worked directly for You</option><option value="You and me worked together">You and me worked together</option><option value="inspiration">inspiration</option><option value="Other">Other</option></select></div></div></div><div class="col col-6"><div class="form-group row"><label for="inputMessage" class="col col-12 col-form-label">Review</label><div class="col col-12"><textarea type="text" class=" col col-12 form-control" id="inputMessage" placeholder="Tell everyone about me in 115 letters" maxlength="115" rows="5" cols="50"></textarea></div></div></div> <div class="col col-2"><div class="form-group row"><div class="col col-md-4"></div><div class="col-sm-10 col-md-8 "><button type="submit" class="btn btn-secondary add_review">Add Review</button></div></div></div></div></form></div></div><br><div class="row tweets"><div class="tweet"><div class="content"><p class="reviewText"> Go forward
+Best wishes 🌹🌹</p><p class="reviewAuthor"> 1</p><i class="relation">I worked directly for You</i></div></div><div class="tweet"><div class="content"><p class="reviewText"> What a fantastic experience you have gone through. In addition to the numerous certificates you haveachieved</p><p class="reviewAuthor"> Yosuf </p><i class="relation">Other</i></div></div><div class="tweet"><div class="content"><p class="reviewText"> it's not a common thing to review yourself, but consider it s placeholder for next reviews.</p><p class="reviewAuthor"> Ahmad</p><i class="relation">Review myself</i></div></div><div class="tweet"><div class="content"><p class="reviewText"> Your Review Will be here, You have 115 letters.</p><p class="reviewAuthor"> Your Name</p><i class="relation">I worked directly for You</i></div></div><br></div></div>
 </div>
+
+<style>
+
+.desc {
+     top: -40px;
+  /* left: 50%;  */
+   width: 100%;
+   position: relative;
+   font-size: 48px;
+   text-align: center;
+   color: #706f6c !important;
+   text-shadow: 0 2px 4px rgba(0,0,0,.2);
+}
+
+.testimonials {
+   margin-top: 105px;
+   border-bottom: 1px solid #bbab86;
+   background-color: #e7e1d4;
+   position: relative;
+   margin: 0;
+}
+
+.tweets {
+   margin-left: 0;
+   margin-bottom: 0;
+   /* padding: 60px 0 30px; */
+   display: flex;
+   flex-wrap: nowrap;
+   overflow-x: scroll;
+   justify-content: flex-start;
+   align-items: flex-start;
+   /* box-shadow: inset 0 3px 3px -3px rgba(0,0,0,.3); */
+}
+
+.tweet {
+   margin-left: 15px;
+   padding: 15px;
+   box-sizing: border-box;
+   background-color: #fff;
+   border-radius: 5px;
+   box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
+   flex: 0 0 370px;
+   position: relative;
+   border: 1px solid #bfbfbf;
+   width: 340px;
+   height: 190px;
+   max-width: 341px;
+   max-height: 191px;
+}
+
+.tweetForm{
+   margin-left: 15px;
+   padding: 15px;
+   box-sizing: border-box;
+   background-color: #fff;
+   border-radius: 5px;
+   box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
+   flex: 0 0 370px;
+   position: relative;
+   border: 1px solid #bfbfbf;
+}
+
+.reviewText{
+   font-size: medium;
+}
+.reviewAuthor{
+font-size: x-large;    margin-bottom: 0%;
+
+}
+.relation{
+font-size: smaller;
+padding: 0%;
+}
+.header_cnter{
+   text-align: center !important;
+}
+.add_review{
+position: relative;
+top:+180%;
+left:-40%;
+background-color: #706f6c;
+}    
+</style>
+
 <!-- /.container-fluid -->
+<br /> <br />
 
 </div>
 <!-- End of Main Content -->

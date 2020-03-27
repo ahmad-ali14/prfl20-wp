@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html <?php language_attributes()  ?>>
+<html <?php language_attributes()  ?> style=" background-color: #f2efe8 !important;" >
 <head>
     <meta charset="<?php bloginfo() ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,7 @@
     <script src="https://kit.fontawesome.com/1c03bf9151.js" crossorigin="anonymous"></script>
 
 </head>
-<body>
+<body style=" background-color: #f2efe8 !important;">
 
 <!-- <header>
 <?php // bloginfo('description')  ?>
@@ -24,7 +24,7 @@
 
 <!-- <section id="main"> -->
 
-
+<div id="page-top"></div>
  <!-- Page Wrapper -->
  <div id="wrapper">
 
@@ -35,58 +35,137 @@
   <!-- Main Content -->
   <div id="content">
 
-    <!-- Topbar -->
-    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+  <div
+          id="root"
+          class="container-fluid"
+        >
+          <div>
+            <div
+              role="navigation"
+              style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; overflow: hidden;"
+            >
+              <div
+                style="z-index: 2; position: absolute; top: 0px; bottom: 0px; transition: -webkit-transform 0.3s ease-out 0s; will-change: transform; overflow-y: auto; background: white; padding-left: 5%; padding-right: 5%; left: 0px; transform: translateX(-100%);"
+              >
+                <div>
+                  <p>
+                    <a class="nav-link " href="/" style="color: black;">Home</a>
+                  </p>
+                  <p>
+                    <a class="nav-link " href="/projects" style="color: black;"
+                      >Projects
+                    </a>
+                  </p>
+                  <p>
+                    <a
+                      class="nav-link "
+                      href="/education"
+                      style="color: black;"
+                    >
+                      Education
+                    </a>
+                  </p>
+                  <p>
+                    <a class="nav-link " href="/contact" style="color: black;">
+                      Contact
+                    </a>
+                  </p>
+                </div>
+              </div>
+              <div
+                style="z-index: 1; position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; opacity: 0; visibility: hidden; transition: opacity 0.3s ease-out 0s, visibility 0.3s ease-out 0s; background-color: rgba(0, 0, 0, 0.3);"
+              ></div>
+              <div
+                style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; overflow-y: auto; transition: left 0.3s ease-out 0s, right 0.3s ease-out 0s;"
+              ></div>
+            </div>
+            <nav
+              class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow "
+            >
+              <button class="btn btn-link d-md-none rounded-circle mr-3">
+                <i class="fa fa-bars"></i>
+              </button>
+              <a href="https://www.ahmad-ali.co.uk/"
+                ><img
+                  id="log_img"
+                  src="https://dl.dropbox.com/s/2du08hmcfnaqv4p/logo.png?dl=0"
+                  alt="Ahmad-Ali-ahmad-ali-logo-Uk"
+              /></a>
+              <ul class="nav navbar-nav ml-auto hidden-xs d-none d-md-block">
+                <div class="collapse navbar-collapse ">
+                  <div class="navbar-nav">
+                    <li class="nav-item dropdown no-arrow d-sm-none"></li>
+                    <li class="nav-item dropdown no-arrow mx-1">
+                      <a
+                        class="nav-link "
+                        href="/"
+                        style="color: black;"
+                        >Home</a
+                      >
+                    </li>
+                    <li class="nav-item dropdown no-arrow mx-1">
+                      <a class="nav-link " href="" style="color: black;">
+                        view CV
+                      </a>
+                    </li>
+                    <li class="nav-item dropdown no-arrow mx-1">
+                      <a
+                        class="nav-link "
+                        href="/projects"
+                        style="color: black;"
+                        >Projects
+                      </a>
+                    </li>
+                    <li class="nav-item dropdown no-arrow mx-1">
+                      <a
+                        class="nav-link "
+                        href="/contact"
+                        style="color: black;"
+                      >
+                        Contact
+                      </a>
+                    </li>
+                    <li class="nav-item dropdown no-arrow mx-1">
+                      <a
+                        class="nav-link "
+                        href="/education"
+                        style="color: black;"
+                      >
+                        Education
+                      </a>
+                    </li>
+                    <li class="nav-item dropdown no-arrow">
+                      <a
+                        class="nav-link "
+                        target="_blank "
+                        href="mailto:aallii300300@gmail.com"
+                        title="Send Me a message"
+                        ><span
+                          class="mr-2 d-none d-lg-inline text-gray-600 small"
+                        ></span
+                        ><img
+                          class="img-profile rounded-circle"
+                          src="https://dl.dropbox.com/s/nyjbgdughrzq7br/email-circle-icon-62.png?dl=0"
+                          alt="Ahmad-Ali-ahmad-ali-logo-Uk"
+                          width="40px"
 
-      <!-- Sidebar Toggle (Topbar) -->
-      <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-        <i class="fa fa-bars"></i>
-      </button>
-
-      <!-- Topbar Search -->
-    <img src="https://dl.dropbox.com/s/2du08hmcfnaqv4p/logo.png?dl=0"  />
-     
-      <!-- Topbar Navbar -->
-      <ul class="navbar-nav ml-auto">
-
-        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-        <li class="nav-item dropdown no-arrow d-sm-none">
-         
-          
-        
-        </li>
-
-        <!-- Nav Item - Alerts -->
-        <li class="nav-item dropdown no-arrow mx-1">
-          <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Projects
-          </a>
-          <!-- Dropdown - Alerts -->
-         
-<!-- Nav Item - Alerts -->
-<li class="nav-item dropdown no-arrow mx-1">
-<a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-  Resume
-</a>
-        <!-- Nav Item - Messages -->
-        <li class="nav-item dropdown no-arrow mx-1">
-          <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Contact
-            <!-- Counter - Messages -->
-          </a>
-          <!-- Dropdown - Messages -->
-          
-
-        <!-- Nav Item - User Information -->
-        <li class="nav-item dropdown no-arrow">
-          <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Ahmad Ali</span>
-            <img class="img-profile rounded-circle" src="https://dl.dropbox.com/s/jq67lusuwgpwbme/phone.png?dl=0" width="35px">
-          </a>
-          
-        </li>
-
-      </ul>
-
-    </nav>
-    <!-- End of Topbar -->
+                      /></a>
+                    </li>
+                    <li class="nav-item dropdown no-arrow">
+                      <a
+                        class="nav-link "
+                        href="tel:+447383164194"
+                        title="Call me"
+                        ><span
+                          class="mr-2 d-none d-lg-inline text-gray-600 small"
+                        ></span
+                        ><img
+                          class="img-profile rounded-circle"
+                          src="https://dl.dropbox.com/s/jq67lusuwgpwbme/phone.png?dl=0"
+                          width="40px"
+                      /></a>
+                    </li>
+                  </div>
+                </div>
+              </ul>
+            </nav>

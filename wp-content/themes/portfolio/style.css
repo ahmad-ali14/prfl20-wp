@@ -122,3 +122,61 @@ article h1{
 margin-bottom: 20px;
 border-bottom: 2px solid gray;
 } */
+
+@media  (min-width: 900px){
+    #log_img{
+        height: 50px;
+        width: 300px;        
+    }
+}
+@media  (max-width: 899px){
+    #log_img{
+        height: 35px;
+        width: 200px;        
+    }
+}
+@media  (max-width: 768px){
+    #log_img{
+        height: 50px;
+        width: 300px;        
+    }
+}
+@media  (max-width: 500px){
+    #log_img{
+        height: 40px;
+        width: 250px;        
+    }
+}
+@media  (max-width: 427px){
+    #log_img{
+        height: 35px;
+        width: 200px;        
+    }
+}
+@media  (max-width: 370px){
+    #log_img{
+        height: 25px;
+        width: 150px;        
+    }
+}
+@media  (max-width: 300px){
+    #log_img{
+        height: 25px;
+        width: 130px;        
+    }
+}
+
+
+html, body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    background-color: #f2efe8 !important;
+  }
+  
+  #wrapper #content-wrapper {
+    width: 100%;
+    overflow-x: hidden;
+    background-color: #f2efe8 !important;
+  }
+  

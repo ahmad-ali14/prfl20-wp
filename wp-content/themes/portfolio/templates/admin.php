@@ -174,6 +174,33 @@ function add_new_skill (){
 
 
 
+if (isset($_POST['sub'])) {
+    
+    print_r($_POST);
+     print_r('\n edit');
+    global $wpdb, $name;
+
+// Get form values.
+$name = (!empty($_POST['sub-email'])) ? sanitize_text_field($_POST['sub-email']) : '';
+
+
+
+$table_name = $wpdb->prefix . "subscribers";
+
+
+
+$wpdb->insert(
+    $table_name,
+    array(
+        'time' => current_time('mysql'),
+        'email' => $name,
+   
+    )
+);
+
+
+exit;
+}
 
 
 ?>

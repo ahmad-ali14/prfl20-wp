@@ -204,11 +204,35 @@ if (is_home()) {
 
                         <?php } ?>
 
+
+
                         <!-- end project row -->
                     </div>
 
                 </div>
+
+
+               
+
+
+
             </div>
+
+            <!-- <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Publications</h6>
+                </div>
+                <div class="card-body">
+                    <p> Site Views Counter Toturial - Medium</p>
+                    <p> Promises or Callbacks - Dev </p>
+                    <p> connect to Your MongoDb Atlas - Dev </p>
+
+                </div>
+            </div>
+
+
+             -->
+             
         </div>
 
 
@@ -284,40 +308,47 @@ if (is_home()) {
                     <h6 class="m-0 font-weight-bold text-primary">Main Skills</h6>
                 </div>
                 <div class="card-body">
-                    <h4 class="small font-weight-bold">MongoDB <span class="float-right">60%</span></h4>
-                    <div class="progress mb-4">
-                        <div class="progress-bar bg-danger" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <h4 class="small font-weight-bold">Express JS <span class="float-right">70%</span></h4>
-                    <div class="progress mb-4">
-                        <div class="progress-bar bg-warning" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <h4 class="small font-weight-bold">React JS <span class="float-right">30%</span></h4>
-                    <div class="progress mb-4">
-                        <div class="progress-bar" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <h4 class="small font-weight-bold">Node JS <span class="float-right">80%</span></h4>
-                    <div class="progress mb-4">
-                        <div class="progress-bar bg-info" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <h4 class="small font-weight-bold">PHP <span class="float-right">50%</span></h4>
-                    <div class="progress">
-                        <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
+                        <div class="row">
+
+                    <?php
+
+                    global $wpdb;
+                    $row = $wpdb->get_results("SELECT * FROM wp_skills");
+                    foreach ($row as $doc) {
+                    ?>
+
+
+
+                        <div class="col-lg-4 mb-3 sm-6">
+                            <div class="card border shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                                    <?php echo $doc->skill; ?>
+                                            </div>
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col-auto">
+                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
+                                                        <?php echo $doc->value; ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto"><i class="<?php echo $doc->fontAwesome; ?> fa-1.5x text-green-300"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    <?php } ?>
+
+                        </div>
+
                 </div>
             </div>
 
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Publications</h6>
-                </div>
-                <div class="card-body">
-                    <p> Site Views Counter Toturial - Medium</p>
-                    <p> Promises or Callbacks - Dev </p>
-                    <p> connect to Your MongoDb Atlas - Dev </p>
-
-                </div>
-            </div>
+          
             <!-- end column -->
         </div>
         <!-- end row  -->

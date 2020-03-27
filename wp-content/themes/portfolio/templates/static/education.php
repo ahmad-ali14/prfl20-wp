@@ -22,7 +22,7 @@ $row = $wpdb->get_results("SELECT * FROM wp_education");
 <?php foreach($row as $doc){ ?>
 
 <tr>
- <td><center><?php echo $doc->name; ?></center></td>
+ <td><center><?php echo $doc->degree; ?></center></td>
  <td><center><?php echo $doc->time; ?></center></td>
  <td><center><?php echo $doc->id; ?></center></td>
  <td><center><a href="<?php  echo home_url().'/wp-admin/admin.php?page=add-new-college&id='.$doc->id; ?>" >Edit</a></center></td>

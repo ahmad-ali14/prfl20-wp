@@ -18,6 +18,10 @@ function add_admin_options (){
 
     add_submenu_page('education', 'Add new college', 'Add new college', 'manage_options', 'add-new-college', 'add_new_college');
 
+    add_menu_page('skills', 'skills', 'manage_options', 'skills', 'skills', 'dashicons-hammer', 6);
+
+    add_submenu_page('skills', 'Add new skill', 'Add new skill', 'manage_options', 'add-new-skill', 'add_new_skill');
+
 
 }
 
@@ -85,6 +89,17 @@ function add_new_college (){
     require_once( get_template_directory().'/templates/static/add_college.php');
 
 }
+
+function skills (){
+    require_once( get_template_directory().'/templates/static/skills.php');
+
+}
+
+function add_new_skill (){
+    require_once( get_template_directory().'/templates/static/add_skill.php');
+
+}
+
 
 
 

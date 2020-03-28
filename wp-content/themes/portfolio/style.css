@@ -180,3 +180,9 @@ html, body {
     background-color: #f2efe8 !important;
   }
   
+
+.error{
+    background-color: #b41414;
+    color: whitesmoke;
+
+}

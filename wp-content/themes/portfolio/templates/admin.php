@@ -2,8 +2,10 @@
 
 function add_admin_options (){
     add_menu_page('Bio', 'Bio', 'manage_options', 'bio', 'theme_init', 'dashicons-id', 6);
-    // add_submenu_page('theme-options-settings', 'gray banner options', 'gray banner', 'manage_options', 'gray-banner-options', 'banner_init' );
     add_submenu_page('bio', 'bio', 'bio', 'manage_options', 'bio', 'theme_init' );
+
+    add_menu_page('Top', 'Top', 'manage_options', 'top', 'top_init', 'dashicons-arrow-up-alt', 6);
+    add_submenu_page('top', 'top', 'top', 'manage_options', 'top', 'top_init' );
 
     add_menu_page('projects', 'projects', 'manage_options', 'projects', 'projects', 'dashicons-editor-code', 6);
     
@@ -27,6 +29,17 @@ function add_admin_options (){
 
 add_action('admin_menu', 'add_admin_options');
 add_action('admin_init', 'theme_settings');
+add_action('admin_init', 'top_settings');
+
+function top_settings (){
+
+    register_setting( 'top-data-group', 'yourName');
+
+
+    add_settings_section('top-options', 'Top Information', 'top_options', 'top-data' );
+
+    add_settings_field('yourName', 'Image URL:', 'yourImage_callback', 'top-data', 'top-options'  );
+}
 
 function theme_settings (){
     //2- register setteing
@@ -62,6 +75,10 @@ function theme_settings (){
 
 function homePage_options(){
     echo 'Change Data for The Bio Section';
+}
+
+function top_options(){
+    echo 'Change Data for The Top Section';
 }
 
 // function blackBox_callback (){
@@ -122,6 +139,10 @@ function theme_init(){
 } 
     
 
+function top_init(){
+    require_once( get_template_directory().'/templates/static/top.php');
+} 
+
 // function homePage_init (){
 //     echo '<h1>HomePage INIT</h1>';
 // }
@@ -175,20 +196,18 @@ function add_new_skill (){
 
 
 if (isset($_POST['sub'])) {
-    
-    print_r($_POST);
-     print_r('\n edit');
     global $wpdb, $name;
+
+
+    if ( empty($_POST["sub-email"]) ) {
+        $_SESSION['sub_err'] = "* pleas fill all fields, all are required";
+        header("Location:" .home_url());
+        exit;
+        }
 
 // Get form values.
 $name = (!empty($_POST['sub-email'])) ? sanitize_text_field($_POST['sub-email']) : '';
-
-
-
 $table_name = $wpdb->prefix . "subscribers";
-
-
-
 $wpdb->insert(
     $table_name,
     array(
@@ -198,9 +217,52 @@ $wpdb->insert(
     )
 );
 
-
+$_SESSION['sub_err'] = "* pleas fill all fields, all are required";
+header("Location:" .home_url());
 exit;
 }
+
+
+
+
+
+
+if (isset($_POST['review'])) {
+    global $wpdb, $name;
+
+
+    if (    
+    empty($_POST['rel']) ||
+    empty($_POST['inputNameR']) ||
+    empty($_POST['inputMessageR']) ) {
+       
+        header("Location:" .home_url());
+        exit;
+        }
+
+// Get form values.
+$name = (!empty($_POST['inputNameR'])) ? sanitize_text_field($_POST['inputNameR']) : '';
+$rel = (!empty($_POST['rel'])) ? sanitize_text_field($_POST['rel']) : '';
+$text = (!empty($_POST['inputMessageR'])) ? sanitize_text_field($_POST['inputMessageR']) : '';
+
+$table_name = $wpdb->prefix . "reviews";
+$wpdb->insert(
+    $table_name,
+    array(
+        'time' => current_time('mysql'),
+        'name' => $name,
+        'rel' => $rel,
+        'text' => $text,
+
+   
+    )
+);
+
+header("Location:" .home_url());
+exit;
+}
+
+
 
 
 ?>

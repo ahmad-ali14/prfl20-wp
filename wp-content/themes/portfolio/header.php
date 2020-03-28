@@ -6,13 +6,19 @@
     <titl><?php bloginfo('name') ?></title>
     <?php wp_head(); ?>
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/1c03bf9151.js" crossorigin="anonymous"></script>
+   <script src="https://kit.fontawesome.com/1c03bf9151.js" crossorigin="anonymous"></script>
 
 </head>
 <body style=" background-color: #f2efe8 !important;">
 
 <!-- <header>
-<?php // bloginfo('description')  ?>
+<?php
+ // bloginfo('description') 
+ if ( ! session_id() )
+    session_start();
+
+ 
+ ?>
 <?php //bloginfo('name'); ?>
 
 <div class="n60 clear">
@@ -169,3 +175,25 @@
                 </div>
               </ul>
             </nav>
+            <?php if(isset($_SESSION['sub_err'])) 
+           echo  '<div id="err_div">';
+            echo '<p>'.$_SESSION['sub_err'].'</p>';
+            echo '</div>';
+            unset($_SESSION['sub_err']);
+            ?>
+            <style>
+              #err_div{
+                background-color: red;
+                color:whitesmoke;
+                font-size: 30px;
+                margin: 0 10% 0 10%;
+                padding:0 10% 0 10%;
+              }
+            </style>
+<pre>
+<?php 
+print_r($_SESSION); 
+?>
+
+<?php echo htmlentities($_SESSION['sub_err']) ?>
+</pre>

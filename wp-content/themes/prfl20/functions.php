@@ -236,10 +236,14 @@ function creat_homePage_default(){
                'post_author'   => 1
            ); 
            // Insert the post into the database
+           wp_insert_post( $homepage );
            $homepage_id =  wp_insert_post( $homepage );
            // set this page as homepage
            update_option('show_on_front', 'page');
+           if( $homepage_id ){
+
            update_option('page_on_front', $homepage_id);
+           }
        }
    
    }
@@ -257,9 +261,34 @@ function creat_homePage_default(){
                'post_author'   => 1
            ); 
            // Insert the post into the database
+           wp_insert_post( $page );
            $page_id =  wp_insert_post( $page );
-           update_post_meta($page_id, '_wp_page_template', 'page-projects.php');
+           if( $page_id ){
 
+           update_post_meta($page_id, '_wp_page_template', 'page-projects.php');
+           }
+       }
+   
+   }
+
+   
+   function creat_project_page(){
+
+    if(get_option('page_on_front')=='0' && get_option('show_on_front')=='posts'){
+           // Create homepage
+           $page = array(
+               'post_type'    => 'page',
+               'post_title'    => 'project',
+               'post_content'  => '',
+               'post_status'   => 'publish',
+               'post_author'   => 1
+           ); 
+           // Insert the post into the database
+           wp_insert_post( $page );
+           $page_id =  wp_insert_post( $page );
+           if( $page_id ){
+           update_post_meta($page_id, '_wp_page_template', 'page-project.php');
+           }
        }
    
    }

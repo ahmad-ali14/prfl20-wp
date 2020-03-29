@@ -42,11 +42,22 @@ function add_admin_options (){
 
     add_submenu_page('skills', 'Add new skill', 'Add new skill', 'manage_options', 'add-new-skill', 'add_new_skill');
 
+    add_menu_page('messages', 'messages', 'manage_options', 'messages', function (){
+        require_once( get_template_directory().'/templates/static/messages.php');
+    
+    }, 'dashicons-email', 7);
+
+     add_submenu_page('messages', 'Message', 'Message', 'manage_options', 'message', 'view_message');
+
     add_action('admin_init', 'theme_settings');
     add_action('admin_init', 'top_settings');
 
 
 }
+
+function view_message (){
+    require_once( get_template_directory().'/templates/static/message.php');
+    }
 
 add_action('admin_menu', 'add_admin_options');
 

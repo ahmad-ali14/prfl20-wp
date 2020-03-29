@@ -223,3 +223,24 @@ function create_subscribers_table(){
      dbDelta($sql);
 }
 
+
+function creat_homePage_default(){
+
+    if(get_option('page_on_front')=='0' && get_option('show_on_front')=='posts'){
+           // Create homepage
+           $homepage = array(
+               'post_type'    => 'page',
+               'post_title'    => 'Home',
+               'post_content'  => '',
+               'post_status'   => 'publish',
+               'post_author'   => 1
+           ); 
+           // Insert the post into the database
+           $homepage_id =  wp_insert_post( $homepage );
+           // set this page as homepage
+           update_option('show_on_front', 'page');
+           update_option('page_on_front', $homepage_id);
+       }
+   
+   }
+

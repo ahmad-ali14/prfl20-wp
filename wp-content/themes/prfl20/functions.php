@@ -2,6 +2,7 @@
 
 require_once( get_template_directory().'/templates/admin.php');
 
+
 function wpa_90820() {
     wp_enqueue_style('style', get_stylesheet_directory_uri() .'/style.css', array() );
     wp_enqueue_style('bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', array() );

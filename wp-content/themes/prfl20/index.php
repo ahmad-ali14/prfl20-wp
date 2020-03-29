@@ -38,7 +38,7 @@ get_header()
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Welcome ... How can I help ??</h1>
+        <h1 class="h3 mb-0 text-gray-800"><?php echo get_option('welcome'); ?></h1>
     </div>
 
     <!-- Content Row -->
@@ -48,10 +48,10 @@ get_header()
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-sm font-weight-bold text-primary text-uppercase mb-1">Lines Coded</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">+100K</div>
+                            <div class="text-sm font-weight-bold text-primary text-uppercase mb-1"><?php echo get_option('card1_text'); ?></div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo get_option('card1_number'); ?></div>
                         </div>
-                        <div class="col-auto"><i class="fas fa-code fa-2x text-gray-300"></i></div>
+                        <div class="col-auto"><i class="<?php echo get_option('card1_fontAwesome'); ?> fa-2x text-gray-300"></i></div>
                     </div>
                 </div>
             </div>
@@ -61,10 +61,10 @@ get_header()
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-sm font-weight-bold text-success text-uppercase mb-1">Courses Attended</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">+40</div>
+                            <div class="text-sm font-weight-bold text-success text-uppercase mb-1"><?php echo get_option('card2_text'); ?></div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo get_option('card2_number'); ?></div>
                         </div>
-                        <div class="col-auto"><i class="fas fa-certificate fa-2x text-gray-300"></i></div>
+                        <div class="col-auto"><i class="<?php echo get_option('card2_fontAwesome'); ?>  fa-2x text-gray-300"></i></div>
                     </div>
                 </div>
             </div>
@@ -74,36 +74,24 @@ get_header()
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-sm font-weight-bold text-info text-uppercase mb-1">Towards Goal</div>
+                            <div class="text-sm font-weight-bold text-info text-uppercase mb-1"><?php echo get_option('card3_text'); ?></div>
                             <div class="row no-gutters align-items-center">
                                 <div class="col-auto">
-                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">40%</div>
+                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?php echo get_option('card2_number'); ?>%</div>
                                 </div>
                                 <div class="col">
                                     <div class="progress progress-sm mr-2">
-                                        <div class="progress-bar bg-info" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%;"></div>
+                                        <div class="progress-bar bg-info" role="progressbar" aria-valuenow="<?php echo get_option('card2_number'); ?>" aria-valuemin="0" aria-valuemax="100" style="width: 40%;"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-auto"><i class="fas fa-bullseye fa-2x text-gray-300"></i></div>
+                        <div class="col-auto"><i class="<?php echo get_option('card3_fontAwesome'); ?>  fa-2x text-gray-300"></i></div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-warning shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-sm font-weight-bold text-warning text-uppercase mb-1">Projects Done</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">+50</div>
-                        </div>
-                        <div class="col-auto"><i class="fas fa-tasks fa-2x text-gray-300"></i></div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
+      
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-warning shadow h-100 py-2">
                 <div class="card-body">

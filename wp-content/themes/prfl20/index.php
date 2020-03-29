@@ -76,7 +76,7 @@ get_header()
         </div>
     </div>
     <?php
-    if (is_home()) {
+   // if (is_home()) {
 
     ?>
 
@@ -86,10 +86,10 @@ get_header()
                 <div class="card shadow mb-4 row ">
                     <div class="row">
                         <div class="card-body col col-xl-7 col-lg-7" style="padding-left: 10%; padding-right: 10%;">
-                            <h1 class="text_1"> I'm <?php echo get_option('yourName'); ?></h1>
-                            <h5> <?php echo get_option('yourRole'); ?> </h5>
-                            <p class="p_bio" text-align="justify"> <?php echo get_option('yourBio'); ?> </p>
-                            <pre> Location: <?php echo get_option('yourLocation'); ?></pre>
+                            <h1 class="text_1"> I'm <?php echo get_option('yourName') ?  get_option('yourName') : 'Your Name'; ?></h1>
+                            <h5> <?php echo get_option('yourRole') ? get_option('yourRole') : 'Your last Role/ Profession'; ?> </h5>
+                            <p class="p_bio" text-align="justify"> <?php echo get_option('yourBio') ? get_option('yourBio') : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'; ?> </p>
+                            <pre> Location: <?php echo get_option('yourLocation') ?  get_option('yourLocation') : 'Your city, country'; ?></pre>
                             <pre> Know Me More..</pre>
 
                             <a href=" <?php echo get_option('yourLinkedin'); ?>" class="social-icon" aria-label="linkedin" style="display: inline-block; width: 50px; height: 50px; position: relative; overflow: hidden; vertical-align: middle;">
@@ -155,7 +155,7 @@ get_header()
 
                         </div>
                         <div class="col-xl-5 col-lg-5">
-                            <div class="card-body" style="padding-left: 20%;"><img src=" <?php echo get_option('yourImage'); ?>" width="90%"></div>
+                            <div class="card-body" style="padding-left: 20%;"><img src=" <?php echo get_option('yourImage')?  get_option('yourImage') : 'https://dl.dropbox.com/s/zyomlpvq7vcvgg8/noImage.jpeg?dl=0'; ?>" width="90%"></div>
                         </div>
                     </div>
                 </div>
@@ -221,7 +221,7 @@ get_header()
 
 
 
-    <?php } ?>
+    <?php //} ?>
 
     <!-- Content Row -->
     <div class="row">

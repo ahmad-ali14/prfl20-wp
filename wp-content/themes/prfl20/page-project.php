@@ -45,7 +45,6 @@ if (isset($_GET['id'])) {
                     </p>
                 </div>
             
-             
               
                 <div>
                     <p> <span class="m-0 font-weight-bold text-primary">date: </span> <?php echo $date; ?> </p>
@@ -53,6 +52,8 @@ if (isset($_GET['id'])) {
             </div>
         </div>
     </div>
+
+    <br />
 
     <div class="col-lg-12 mb-12">
         <div class="card shadow mb-12" style="margin : 0 10% 0 10%;">

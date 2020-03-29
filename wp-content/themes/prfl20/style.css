@@ -1,0 +1,188 @@
+/*
+Theme Name: prfl20
+Theme URI: http://prfl20.byethost5.com/
+Author: Ahmad Ali
+Author URI: https://www.ahmad-ali.co.uk/
+Description: clear and elegent portfolio, already written in react so I am changing to PHP Wordpress.
+Version: 1.0
+License: MIT
+License URI: https://opensource.org/licenses/MIT
+Text Domain: prfl20
+Tags: one-column, two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+*{
+    margin:0;
+    padding: 0;
+}
+.clear:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+
+body{
+    font-family: 'Calibri';
+}
+
+/* header{
+    padding: 30px;
+    text-align: left;
+    background-color: #288bc7;
+    color:white;
+    border-bottom: 2px solid red;
+} */
+
+.n60{
+    width:1024px;
+    margin: auto;
+    padding: 15px;
+}
+
+.logo{
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    float: left;
+    font-weight: 300;
+
+}
+
+div#top_nav{
+    float: right;
+}
+
+div#top_nav ul li{
+    float: left;
+    list-style: none;
+    margin: 10px;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    /* border-bottom: 2px solid red; */
+
+
+
+}
+
+div#top_nav ul li:hover{
+    border-bottom: 2px solid white ;
+}
+
+div#top_nav ul li a {
+    text-decoration: inherit;
+    color: white;
+}
+
+.menu:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+header{
+    background-color: #b41414;
+    height: 70px;
+    color:white;
+}
+
+#theme_slideer{
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+#gray-banner{
+    text-align: center;
+    background-color: #282828;
+    color: white;
+    padding: 20px 0;
+    margin-top: -4px;
+    z-index: 12;
+    position: relative;
+    font-family: 'Georgia', 'Times New Roman', 'Times', sans-serif;
+}
+
+p > input.button.button-primary.sub-button {
+    background-color: red !important;
+}
+
+/* a.title{
+    color:black;
+    text-decoration: none;
+  
+} */
+/* section#main{
+    margin: 60px;
+    width: 1024px;
+}
+
+article h1{
+margin-bottom: 20px;
+border-bottom: 2px solid gray;
+} */
+
+@media  (min-width: 900px){
+    #log_img{
+        height: 50px;
+        width: 300px;        
+    }
+}
+@media  (max-width: 899px){
+    #log_img{
+        height: 35px;
+        width: 200px;        
+    }
+}
+@media  (max-width: 768px){
+    #log_img{
+        height: 50px;
+        width: 300px;        
+    }
+}
+@media  (max-width: 500px){
+    #log_img{
+        height: 40px;
+        width: 250px;        
+    }
+}
+@media  (max-width: 427px){
+    #log_img{
+        height: 35px;
+        width: 200px;        
+    }
+}
+@media  (max-width: 370px){
+    #log_img{
+        height: 25px;
+        width: 150px;        
+    }
+}
+@media  (max-width: 300px){
+    #log_img{
+        height: 25px;
+        width: 130px;        
+    }
+}
+
+
+html, body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    background-color: #f2efe8 !important;
+  }
+  
+  #wrapper #content-wrapper {
+    width: 100%;
+    overflow-x: hidden;
+    background-color: #f2efe8 !important;
+  }
+  
+
+.error{
+    background-color: #b41414;
+    color: whitesmoke;
+
+}

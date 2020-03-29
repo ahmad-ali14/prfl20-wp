@@ -58,7 +58,7 @@
                     <a class="nav-link " href="/" style="color: black;">Home</a>
                   </p>
                   <p>
-                    <a class="nav-link " href="/projects" style="color: black;"
+                    <a class="nav-link " href="<?php home_url().'/projects'?>" style="color: black;"
                       >Projects
                     </a>
                   </p>
@@ -91,7 +91,7 @@
               <button class="btn btn-link d-md-none rounded-circle mr-3">
                 <i class="fa fa-bars"></i>
               </button>
-              <a href=""
+              <a  href="<?php  echo home_url();?>"
                 ><img
                   id="log_img"
                   src="<?php echo get_option('yourLogo'); ?> "
@@ -104,20 +104,16 @@
                     <li class="nav-item dropdown no-arrow mx-1">
                       <a
                         class="nav-link "
-                        href="/"
+                        href="<?php  echo home_url();?>"
                         style="color: black;"
                         >Home</a
                       >
                     </li>
-                    <li class="nav-item dropdown no-arrow mx-1">
-                      <a class="nav-link " href="" style="color: black;">
-                        view CV
-                      </a>
-                    </li>
+                    
                     <li class="nav-item dropdown no-arrow mx-1">
                       <a
                         class="nav-link "
-                        href="/projects"
+                        href="<?php  echo home_url().'/projects';?>"
                         style="color: black;"
                         >Projects
                       </a>
@@ -125,7 +121,7 @@
                     <li class="nav-item dropdown no-arrow mx-1">
                       <a
                         class="nav-link "
-                        href="/contact"
+                        href="<?php  echo home_url().'/contact';?>"
                         style="color: black;"
                       >
                         Contact
@@ -134,7 +130,7 @@
                     <li class="nav-item dropdown no-arrow mx-1">
                       <a
                         class="nav-link "
-                        href="/education"
+                        href="<?php  echo home_url().'/education';?>"
                         style="color: black;"
                       >
                         Education

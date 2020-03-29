@@ -260,7 +260,7 @@ get_header()
                         <?php }
                         
                         if(!$projects) {
-                            echo `<div class="col-12">
+                            echo '<div class="col-12">
                             <p style="margin-bottom: 7%;">
                                 <i class="fas fa-chevron-right" aria-hidden="true"></i>
                                 &nbsp;<i class="fab fa-react" aria-hidden="true"></i>
@@ -269,7 +269,7 @@ get_header()
                                 &nbsp;&nbsp;&nbsp;
                                 <a title="View more Details" class="btn-link text-muted" href="http://localhost/portfolio/project?id=8"><i class="fas fa-info-circle" aria-hidden="true"> details</i></a>
                             </p>
-                        </div>`;
+                        </div>';
                         }
                         
                         
@@ -334,7 +334,7 @@ get_header()
                     global $wpdb;
                     $row = $wpdb->get_results("SELECT * FROM wp_education");
 
-                    if($row){
+                    
                     foreach ($row as $doc) {
                     ?>
 
@@ -344,9 +344,9 @@ get_header()
                         <p> <?php echo $doc->degree; ?> - <?php echo $doc->university; ?> - <?php echo $doc->country; ?> .</p>
 
                     <?php } 
-                    }else{
-                        echo ` <p> <i class="fas fa-chevron-right"></i> 2010-2014: 
-                        <p> computer science - London UCL, UK. </p>`;
+                    if(!$row){
+                        echo ' <p> <i class="fas fa-chevron-right"></i> 2010-2014: 
+                        <p> computer science - London UCL, UK. </p>';
                     }
                     
                     
@@ -388,7 +388,10 @@ get_header()
                             </p>
                         </div>
 
-                    <?php } ?>
+                    <?php }
+                    if(!$row) { echo '<p style="margin-bottom: 5%;"><i class="fas fa-chevron-right"></i> CS50\'s Introduction to Computer Science - Harvard University, USA ( EDX )&nbsp;<a href="https://www.edx.org/course/cs50s-introduction-to-computer-science" title="visit course page" target="_blank"><button class="btn btn-link text-muted">  <i class="fas fa-external-link-alt"> visit</i>  </button></a><a title="view certificate" href="/api/c/5e2dc13af72181d945f93185"><button class="btn btn-link text-muted">  <i class="fas fa-graduation-cap"> details</i> </button></a></p>'; }
+
+                    ?>
 
                 </div>
             </div>
@@ -432,7 +435,31 @@ get_header()
                                 </div>
                             </div>
 
-                        <?php } ?>
+                        <?php }
+                        if(!$row){
+                            echo '<div class="col-lg-4 mb-3 sm-6">
+                            <div class="card border shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                                react                                                </div>
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col-auto">
+                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
+                                                        74                                                        </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto"><i class="fab fa-react fa-1.5x text-green-300" aria-hidden="true"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>';
+                        }
+                        
+                        
+                        ?>
 
                     </div>
 

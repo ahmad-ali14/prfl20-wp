@@ -1,44 +1,13 @@
 <?php
 get_header()
 ?>
-<?php
-
-// if(have_posts()){
-//     while(have_posts()){
-//         the_post();
-//         
-?>
-<!-- <article class="post"> -->
-<!-- //         <a href="<?php // the_permalink(); 
-                            ?>"  class="title" ><h1><?php // the_title(); 
-                                                    ?>
-</h1></a> -->
-<!-- <h2><?php // the_content();
-            ?> </h2> -->
-<!-- </article> -->
-<?php
-//     }
-// }
-// 
-?>
-
-
-
-<?php if (function_exists('easingslider') && is_home()) {
-
-    //  echo '<div id="theme_slideer">';
-    //   easingslider( 37 );  
-    // echo  '</div>';
-}
-
-?>
 
 <!-- Begin Page Content -->
 <div class="container-fluid" style="padding-left: 10%; padding-right: 10%;">
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800"><?php echo get_option('welcome'); ?></h1>
+        <h1 class="h3 mb-0 text-gray-800"><?php echo get_option('welcome')? get_option('welcome') : 'your welcome message here ..' ; ?></h1>
     </div>
 
     <!-- Content Row -->
@@ -48,10 +17,10 @@ get_header()
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-sm font-weight-bold text-primary text-uppercase mb-1"><?php echo get_option('card1_text'); ?></div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo get_option('card1_number'); ?></div>
+                            <div class="text-sm font-weight-bold text-primary text-uppercase mb-1"><?php echo get_option('card1_text') ? get_option('card1_text') : 'card 1 Text'; ?></div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo get_option('card1_number') ? get_option('card1_number') : '100k'; ?></div>
                         </div>
-                        <div class="col-auto"><i class="<?php echo get_option('card1_fontAwesome'); ?> fa-2x text-gray-300"></i></div>
+                        <div class="col-auto"><i class="<?php echo get_option('card1_fontAwesome') ? get_option('card1_fontAwesome') : 'fas fa-code'; ?> fa-2x text-gray-300"></i></div>
                     </div>
                 </div>
             </div>
@@ -61,10 +30,10 @@ get_header()
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-sm font-weight-bold text-success text-uppercase mb-1"><?php echo get_option('card2_text'); ?></div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo get_option('card2_number'); ?></div>
+                            <div class="text-sm font-weight-bold text-success text-uppercase mb-1"><?php echo get_option('card2_text') ? get_option('card2_text') : 'Card 2 TEXT'; ?></div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo get_option('card2_number') ? get_option('card2_number') : '3456'; ?></div>
                         </div>
-                        <div class="col-auto"><i class="<?php echo get_option('card2_fontAwesome'); ?>  fa-2x text-gray-300"></i></div>
+                        <div class="col-auto"><i class="<?php echo get_option('card2_fontAwesome') ? get_option('card2_fontAwesome') : 'fas fa-code'; ?>  fa-2x text-gray-300"></i></div>
                     </div>
                 </div>
             </div>
@@ -74,19 +43,19 @@ get_header()
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-sm font-weight-bold text-info text-uppercase mb-1"><?php echo get_option('card3_text'); ?></div>
+                            <div class="text-sm font-weight-bold text-info text-uppercase mb-1"><?php echo get_option('card3_text') ? get_option('card3_text') : 'card 3 Text'; ?></div>
                             <div class="row no-gutters align-items-center">
                                 <div class="col-auto">
-                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?php echo get_option('card2_number'); ?>%</div>
+                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?php echo get_option('card2_number') ? get_option('card2_number') : '50'; ?>%</div>
                                 </div>
                                 <div class="col">
                                     <div class="progress progress-sm mr-2">
-                                        <div class="progress-bar bg-info" role="progressbar" aria-valuenow="<?php echo get_option('card2_number'); ?>" aria-valuemin="0" aria-valuemax="100" style="width: 40%;"></div>
+                                        <div class="progress-bar bg-info" role="progressbar" aria-valuenow="<?php echo get_option('card2_number') ? get_option('card2_number') : '50'; ?>" aria-valuemin="0" aria-valuemax="100" style="width: 40%;"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-auto"><i class="<?php echo get_option('card3_fontAwesome'); ?>  fa-2x text-gray-300"></i></div>
+                        <div class="col-auto"><i class="<?php echo get_option('card3_fontAwesome')? get_option('card3_fontAwesome') : 'fas fa-code'; ?>  fa-2x text-gray-300"></i></div>
                     </div>
                 </div>
             </div>
@@ -97,10 +66,10 @@ get_header()
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-sm font-weight-bold text-warning text-uppercase mb-1"><?php echo get_option('card4_text'); ?></div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo get_option('card4_number'); ?></div>
+                            <div class="text-sm font-weight-bold text-warning text-uppercase mb-1"><?php echo get_option('card4_text')? get_option('card4_text') : 'card 4 Text'; ?></div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo get_option('card4_number') ? get_option('card4_number') : '789'; ?></div>
                         </div>
-                        <div class="col-auto"><i class="<?php echo get_option('card4_fontAwesome'); ?> fa-2x text-gray-300"></i></div>
+                        <div class="col-auto"><i class="<?php echo get_option('card4_fontAwesome') ?get_option('card4_fontAwesome') : 'fas fa-code'; ?> fa-2x text-gray-300"></i></div>
                     </div>
                 </div>
             </div>

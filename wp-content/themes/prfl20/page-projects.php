@@ -26,7 +26,7 @@ get_header()
                         &nbsp;&nbsp;&nbsp;
                         <a href="<?php echo $project->url; ?>" title="visit Live Demo" target="_blank" class="btn-link text-muted"><i class="fas fa-external-link-alt"> visit</i></a>
                         &nbsp;&nbsp;&nbsp;
-                        <a title="View more Details" class="btn-link text-muted" href="#"><i class="fas fa-info-circle"> details</i></a>
+                        <a title="View more Details" class="btn-link text-muted" href="<?php echo home_url().'/project?id='.$project->id; ?>"><i class="fas fa-info-circle"> details</i></a>
                     </p>
                 </div>
 

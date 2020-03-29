@@ -57,7 +57,7 @@ get_header()
                             <button class="btn btn-link text-muted">
                                 <i class="fas fa-external-link-alt"> visit</i>
                             </button></a>
-                        <a title="view certificate" href="#">
+                        <a title="view certificate" href="<?php echo home_url().'/certificate?id='.$doc->id; ?>">
                             <button class="btn btn-link text-muted">
                                 <i class="fas fa-graduation-cap"> details</i>
                             </button>

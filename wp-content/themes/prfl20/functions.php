@@ -336,3 +336,25 @@ function creat_homePage_default(){
        }
    
    }
+
+
+   function creat_contact_page(){
+
+    if(get_option('page_on_front')=='0' && get_option('show_on_front')=='posts'){
+           // Create homepage
+           $page = array(
+               'post_type'    => 'page',
+               'post_title'    => 'contact',
+               'post_content'  => '',
+               'post_status'   => 'publish',
+               'post_author'   => 1
+           ); 
+           // Insert the post into the database
+           wp_insert_post( $page );
+           $page_id =  wp_insert_post( $page );
+           if( $page_id ){
+           update_post_meta($page_id, '_wp_page_template', 'page-contact.php');
+           }
+       }
+   
+   }

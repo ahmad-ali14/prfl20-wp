@@ -257,7 +257,23 @@ get_header()
                             </div>
 
 
-                        <?php } ?>
+                        <?php }
+                        
+                        if(!$projects) {
+                            echo `<div class="col-12">
+                            <p style="margin-bottom: 7%;">
+                                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                                &nbsp;<i class="fab fa-react" aria-hidden="true"></i>
+                                portfolio - feb 2020                                    &nbsp;&nbsp;&nbsp;
+                                <a href="https://www.ahmad-ali.co.uk/" title="visit Live Demo" target="_blank" class="btn-link text-muted"><i class="fas fa-external-link-alt" aria-hidden="true"> visit</i></a>
+                                &nbsp;&nbsp;&nbsp;
+                                <a title="View more Details" class="btn-link text-muted" href="http://localhost/portfolio/project?id=8"><i class="fas fa-info-circle" aria-hidden="true"> details</i></a>
+                            </p>
+                        </div>`;
+                        }
+                        
+                        
+                        ?>
 
 
 
@@ -317,6 +333,8 @@ get_header()
 
                     global $wpdb;
                     $row = $wpdb->get_results("SELECT * FROM wp_education");
+
+                    if($row){
                     foreach ($row as $doc) {
                     ?>
 
@@ -325,7 +343,14 @@ get_header()
                             <?php echo $doc->start; ?> - <?php echo $doc->end; ?>: </p>
                         <p> <?php echo $doc->degree; ?> - <?php echo $doc->university; ?> - <?php echo $doc->country; ?> .</p>
 
-                    <?php } ?>
+                    <?php } 
+                    }else{
+                        echo ` <p> <i class="fas fa-chevron-right"></i> 2010-2014: 
+                        <p> computer science - London UCL, UK. </p>`;
+                    }
+                    
+                    
+                    ?>
 
 
                 </div>

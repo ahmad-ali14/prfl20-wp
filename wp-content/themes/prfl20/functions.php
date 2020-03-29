@@ -60,6 +60,27 @@ add_action( 'wp_enqueue_scripts', 'bootstrapstarter_enqueue_scripts' );
 
 
 //add_action('admin_notices', "show_msgs_to_admin");
+add_action('after_setup_theme', 'prfl20_setup');
+
+
+function prfl20_setup() {
+
+    create_projects_table();
+    create_certificates_table();
+    create_skills_table();
+    create_subscribers_table();
+    create_reviews_table();
+    create_education_table();
+    creat_homePage_default();
+    creat_projects_page();
+    creat_project_page();
+    creat_certificates_page();
+    creat_certificate_page();
+    creat_contact_page();
+
+}
+
+
 
 if ( ! function_exists( 'prfl20_setup' ) ) {
     /**
@@ -71,8 +92,7 @@ if ( ! function_exists( 'prfl20_setup' ) ) {
     *  @since prfl20 1.0
     */
     function prfl20_setup() {
-
-
+        
         create_projects_table();
         create_certificates_table();
         create_skills_table();
@@ -85,9 +105,6 @@ if ( ! function_exists( 'prfl20_setup' ) ) {
         creat_certificates_page();
         creat_certificate_page();
         creat_contact_page();
-
-
-
 
     }
 

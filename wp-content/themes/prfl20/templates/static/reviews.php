@@ -29,8 +29,8 @@ $projects = $wpdb->get_results("SELECT * FROM wp_reviews");
  <td><center><?php echo $project->rel; ?></center></td>
  <td><center><?php echo $project->time; ?></center></td>
  <td><center><?php echo $project->id; ?></center></td>
- <td><center><a href="<?php  echo home_url().'/wp-admin/admin.php?page=add-new-project&id='.$project->id; ?>" >Edit</a></center></td>
- <td><center><a href="<?php  echo home_url().'/wp-admin/admin.php?page=add-new-project&action=delete&id='.$project->id; ?>">Delete</a></center></td>
+ <td><center><a href="<?php  echo home_url().'/wp-admin/admin.php?page=edit_review&id='.$project->id; ?>" >Edit</a></center></td>
+ <td><center><a href="<?php  echo home_url().'/wp-admin/admin.php?page=edit_review&action=delete&id='.$project->id; ?>">Delete</a></center></td>
 
 
 

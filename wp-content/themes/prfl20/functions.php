@@ -6,13 +6,13 @@ require_once( get_template_directory().'/templates/admin.php');
 function wpa_90820() {
     wp_enqueue_style('style', get_stylesheet_directory_uri() .'/style.css', array() );
     wp_enqueue_style('bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', array() );
-    wp_enqueue_style('bootstrap', get_stylesheet_directory_uri() .'/vendor/fontawesome-free/css/all.min.css', array() );
+    // wp_enqueue_style('bootstrap', get_stylesheet_directory_uri() .'/vendor/fontawesome-free/css/all.min.css', array() );
     wp_enqueue_style('style','https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i', array() );
     wp_enqueue_style('bootstrap', get_stylesheet_directory_uri() .'/css/sb-admin-2.min.css', array() );
     wp_enqueue_script('bootstrap', get_stylesheet_directory_uri() .'/vendor/jquery/jquery.min.js', array() );
     wp_enqueue_script('bootstrap', get_stylesheet_directory_uri() .'/vendor/bootstrap/js/bootstrap.bundle.min.js', array() );
     wp_enqueue_script('bootstrap', get_stylesheet_directory_uri() .'/vendor/jquery-easing/jquery.easing.min.js', array() );
-    wp_enqueue_script('bootstrap', get_stylesheet_directory_uri() .'/js/sb-admin-2.min.js', array() );
+    wp_enqueue_script('bootstrap', get_stylesheet_directory_uri() .'/vendor/js/sb-admin-2.min.js', array() );
     wp_enqueue_script('fontAwesome', " https://kit.fontawesome.com/1c03bf9151.js", array() );
 
 
@@ -22,19 +22,19 @@ function wpa_90820() {
 
 add_action('wp_enqueue_scripts', 'wpa_90820');
 
-function bootstrapstarter_enqueue_styles() {
-    wp_register_style('bootstrap', get_template_directory_uri() . '/bootstrap/css/bootstrap.min.css' );
-    $dependencies = array('bootstrap');
-    wp_enqueue_style( 'bootstrapstarter-style', get_stylesheet_uri(), $dependencies ); 
-}
+// function bootstrapstarter_enqueue_styles() {
+//     wp_register_style('bootstrap', get_template_directory_uri() . '/bootstrap/css/bootstrap.min.css' );
+//     $dependencies = array('bootstrap');
+//     wp_enqueue_style( 'bootstrapstarter-style', get_stylesheet_uri(), $dependencies ); 
+// }
 
-function bootstrapstarter_enqueue_scripts() {
-    $dependencies = array('jquery');
-    wp_enqueue_script('bootstrap', get_template_directory_uri().'/bootstrap/js/bootstrap.min.js', $dependencies, '3.3.6', true );
-}
+// function bootstrapstarter_enqueue_scripts() {
+//     $dependencies = array('jquery');
+//     wp_enqueue_script('bootstrap', get_template_directory_uri().'/bootstrap/js/bootstrap.min.js', $dependencies, '3.3.6', true );
+// }
 
-add_action( 'wp_enqueue_scripts', 'bootstrapstarter_enqueue_styles' );
-add_action( 'wp_enqueue_scripts', 'bootstrapstarter_enqueue_scripts' );
+// add_action( 'wp_enqueue_scripts', 'bootstrapstarter_enqueue_styles' );
+// add_action( 'wp_enqueue_scripts', 'bootstrapstarter_enqueue_scripts' );
 
 
 
@@ -92,7 +92,7 @@ if ( ! function_exists( 'prfl20_setup' ) ) {
     *  @since prfl20 1.0
     */
     function prfl20_setup() {
-        
+
         create_projects_table();
         create_certificates_table();
         create_skills_table();
@@ -277,7 +277,6 @@ function creat_homePage_default(){
 
    function creat_projects_page(){
 
-    if(get_option('page_on_front')=='0' && get_option('show_on_front')=='posts'){
            // Create homepage
            $page = array(
                'post_type'    => 'page',
@@ -293,14 +292,13 @@ function creat_homePage_default(){
 
            update_post_meta($page_id, '_wp_page_template', 'page-projects.php');
            }
-       }
+       
    
    }
 
    
    function creat_project_page(){
 
-    if(get_option('page_on_front')=='0' && get_option('show_on_front')=='posts'){
            // Create homepage
            $page = array(
                'post_type'    => 'page',
@@ -315,14 +313,13 @@ function creat_homePage_default(){
            if( $page_id ){
            update_post_meta($page_id, '_wp_page_template', 'page-project.php');
            }
-       }
+       
    
    }
 
 
    function creat_certificates_page(){
 
-    if(get_option('page_on_front')=='0' && get_option('show_on_front')=='posts'){
            // Create homepage
            $page = array(
                'post_type'    => 'page',
@@ -337,14 +334,13 @@ function creat_homePage_default(){
            if( $page_id ){
            update_post_meta($page_id, '_wp_page_template', 'page-certificates.php');
            }
-       }
+       
    
    }
 
 
    function creat_certificate_page(){
 
-    if(get_option('page_on_front')=='0' && get_option('show_on_front')=='posts'){
            // Create homepage
            $page = array(
                'post_type'    => 'page',
@@ -359,14 +355,13 @@ function creat_homePage_default(){
            if( $page_id ){
            update_post_meta($page_id, '_wp_page_template', 'page-certificate.php');
            }
-       }
+       
    
    }
 
 
    function creat_contact_page(){
 
-    if(get_option('page_on_front')=='0' && get_option('show_on_front')=='posts'){
            // Create homepage
            $page = array(
                'post_type'    => 'page',
@@ -381,6 +376,6 @@ function creat_homePage_default(){
            if( $page_id ){
            update_post_meta($page_id, '_wp_page_template', 'page-contact.php');
            }
-       }
+       
    
    }

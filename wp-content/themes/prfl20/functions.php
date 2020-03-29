@@ -71,6 +71,7 @@ function prfl20_setup() {
     create_subscribers_table();
     create_reviews_table();
     create_education_table();
+    create_messages_table();
     creat_homePage_default();
     creat_projects_page();
     creat_project_page();
@@ -207,6 +208,28 @@ function create_reviews_table(){
      require_once(ABSPATH.'wp-admin/includes/upgrade.php');
      dbDelta($sql);
 }
+
+function create_messages_table() {
+    global $wpdb;
+   
+    $table_name =$wpdb->prefix."reviews";
+    $charset_collate = $wpdb->get_charset_collate();
+ 
+    $sql = "CREATE TABLE $table_name(
+        id mediumint(9) NOT NULL AUTO_INCREMENT,
+        time datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
+        name text DEFAULT '' NOT NULL,
+        email text DEFAULT '' NOT NULL,  
+        message text DEFAULT '' NOT NULL,
+     
+ 
+        PRIMARY KEY (id) 
+    )$charset_collate; ";
+ 
+     require_once(ABSPATH.'wp-admin/includes/upgrade.php');
+     dbDelta($sql);
+}
+
 
 function create_skills_table(){
     global $wpdb;

@@ -175,3 +175,24 @@ function create_reviews_table(){
      require_once(ABSPATH.'wp-admin/includes/upgrade.php');
      dbDelta($sql);
 }
+
+function create_skills_table(){
+    global $wpdb;
+   
+    $table_name =$wpdb->prefix."skills";
+    $charset_collate = $wpdb->get_charset_collate();
+ 
+    $sql = "CREATE TABLE $table_name(
+        id mediumint(9) NOT NULL AUTO_INCREMENT,
+        time datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
+        value text DEFAULT '' NOT NULL,
+        skill text DEFAULT '' NOT NULL,
+        fontAwesome text DEFAULT '' NOT NULL,
+
+ 
+        PRIMARY KEY (id) 
+    )$charset_collate; ";
+ 
+     require_once(ABSPATH.'wp-admin/includes/upgrade.php');
+     dbDelta($sql);
+}

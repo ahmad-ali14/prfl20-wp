@@ -79,6 +79,15 @@ if ( ! function_exists( 'prfl20_setup' ) ) {
         create_subscribers_table();
         create_reviews_table();
         create_education_table();
+        creat_homePage_default();
+        creat_projects_page();
+        creat_project_page();
+        creat_certificates_page();
+        creat_certificate_page();
+        creat_contact_page();
+
+
+
 
     }
 

@@ -1,83 +1,103 @@
 <?php
 
+/*
+	
+@package prfl20
+	
+	========================
+		ADMIN PAGE
+	========================
+*/
+
+require_once( get_template_directory().'/assets/assets-functions.php');
+
 function add_admin_options (){
-    add_menu_page('Bio', 'Bio', 'manage_options', 'bio', 'theme_init', 'dashicons-id', 6);
+   
+    add_admin_menu_separator(6);
+    add_admin_menu_separator(8);
+
+
+    add_menu_page('Bio', 'Bio', 'manage_options', 'bio', 'theme_init', 'dashicons-id', 7);
     add_submenu_page('bio', 'bio', 'bio', 'manage_options', 'bio', 'theme_init' );
 
-    add_menu_page('Top', 'Top', 'manage_options', 'top', 'top_init', 'dashicons-arrow-up-alt', 6);
+    add_menu_page('Top', 'Top', 'manage_options', 'top', 'top_init', 'dashicons-arrow-up-alt', 7);
     add_submenu_page('top', 'top', 'top', 'manage_options', 'top', 'top_init' );
 
-    add_menu_page('projects', 'projects', 'manage_options', 'projects', 'projects', 'dashicons-editor-code', 6);
+    add_menu_page('projects', 'projects', 'manage_options', 'projects', 'projects', 'dashicons-editor-code', 7);
     
     add_submenu_page('projects', 'Add new project', 'Add new project', 'manage_options', 'add-new-project', 'add_new_project');
 
-    add_menu_page('certificates', 'certificates', 'manage_options', 'certificates', 'certificates', 'dashicons-welcome-learn-more', 6);
+    add_menu_page('certificates', 'certificates', 'manage_options', 'certificates', 'certificates', 'dashicons-welcome-learn-more', 7);
 
     add_submenu_page('certificates', 'Add new certificate', 'Add new certificate', 'manage_options', 'add-new-certificate', 'add_new_certificate');
 
     add_menu_page('education', 'education', 'manage_options', 'education', 'education', 'dashicons-book
-    ', 6);
+    ', 7);
 
     add_submenu_page('education', 'Add new college', 'Add new college', 'manage_options', 'add-new-college', 'add_new_college');
 
-    add_menu_page('skills', 'skills', 'manage_options', 'skills', 'skills', 'dashicons-hammer', 6);
+    add_menu_page('skills', 'skills', 'manage_options', 'skills', 'skills', 'dashicons-hammer', 7);
 
     add_submenu_page('skills', 'Add new skill', 'Add new skill', 'manage_options', 'add-new-skill', 'add_new_skill');
+
+    add_action('admin_init', 'theme_settings');
+    add_action('admin_init', 'top_settings');
 
 
 }
 
 add_action('admin_menu', 'add_admin_options');
-add_action('admin_init', 'theme_settings');
-add_action('admin_init', 'top_settings');
 
 function top_settings (){
 
     register_setting( 'top-data-group', 'yourLogo');
-    register_setting( 'card1-group', 'card1_text');
-    register_setting( 'card1-group', 'card1_number');
-    register_setting( 'card1-group', 'card1_fontAwesome');
+    register_setting( 'top-data-group', 'welcome');
 
-    register_setting( 'card2-group', 'card2_text');
-    register_setting( 'card2-group', 'card2_number');
-    register_setting( 'card2-group', 'card2_fontAwesome');
+    register_setting( 'top-data-group', 'card1_text');
+    register_setting( 'top-data-group', 'card1_number');
+    register_setting( 'top-data-group', 'card1_fontAwesome');
 
-    register_setting( 'card3-group', 'card3_text');
-    register_setting( 'card3-group', 'card3_number');
-    register_setting( 'card3-group', 'card3_fontAwesome');
+    register_setting( 'top-data-group', 'card2_text');
+    register_setting( 'top-data-group', 'card2_number');
+    register_setting( 'top-data-group', 'card2_fontAwesome');
 
-    register_setting( 'card4-group', 'card4_text');
-    register_setting( 'card4-group', 'card4_number');
-    register_setting( 'card4-group', 'card4_fontAwesome');
+    register_setting( 'top-data-group', 'card3_text');
+    register_setting( 'top-data-group', 'card3_number');
+    register_setting( 'top-data-group', 'card3_fontAwesome');
 
-
-
-    add_settings_section('top-options', 'Top Information', 'top_options', 'top-data' );
-    add_settings_section('card1', 'Card 1', 'card1_options', 'top-data' );
-    add_settings_section('card2', 'Card 2', 'top_options', 'top-data' );
-    add_settings_section('card3', 'Card 3', 'top_options', 'top-data' );
-    add_settings_section('card4', 'Card 4', 'top_options', 'top-data' );
+    register_setting( 'top-data-group', 'card4_text');
+    register_setting( 'top-data-group', 'card4_number');
+    register_setting( 'top-data-group', 'card4_fontAwesome');
 
 
 
-    add_settings_field('yourLogo', 'Logo Image URL:', 'yourLogoImage_callback', 'top-data', 'top-options'  );
-
-    add_settings_field('card1_text', 'card 1 text:', 'card1_text_callback', 'top-data', 'card1'  );
-    add_settings_field('card1_number', 'card 1 number:', 'card1_number_callback', 'top-data', 'card1'  );
-    add_settings_field('card1_fontAwesome', 'card 1 Font Awesome class:', 'card1_fontAwesome_callback', 'top-data', 'card1'  );
-
-    add_settings_field('card2_text', 'card 2 text:', 'card2_text_callback', 'top-data', 'card2'  );
-    add_settings_field('card2_number', 'card 2 number:', 'card2_number_callback', 'top-data', 'card2'  );
-    add_settings_field('card2_fontAwesome', 'card 2 Font Awesome class:', 'card2_fontAwesome_callback', 'top-data', 'card2'  );
+    add_settings_section('top-options', 'Top Information', 'top_options', 'top' );
+    add_settings_section('card1', 'Card 1', 'card1_options', 'top' );
+    add_settings_section('card2', 'Card 2', 'top_options', 'top' );
+    add_settings_section('card3', 'Card 3', 'top_options', 'top' );
+    add_settings_section('card4', 'Card 4', 'top_options', 'top' );
 
 
-    add_settings_field('card3_text', 'card 3 text:', 'card3_text_callback', 'top-data', 'card3'  );
-    add_settings_field('card3_number', 'card 3 number:', 'card3_number_callback', 'top-data', 'card3'  );
-    add_settings_field('card3_fontAwesome', 'card 3 Font Awesome class:', 'card3_fontAwesome_callback', 'top-data', 'card3'  );
 
-    add_settings_field('card4_text', 'card 4 text:', 'card4_text_callback', 'top-data', 'card4'  );
-    add_settings_field('card4_number', 'card 4 number:', 'card4_number_callback', 'top-data', 'card4'  );
-    add_settings_field('card4_fontAwesome', 'card 4 Font Awesome class:', 'card4_fontAwesome_callback', 'top-data', 'card4'  );
+    add_settings_field('yourLogo1', 'Logo Image URL:', 'yourLogoImage_callback', 'top', 'top-options'  );
+    add_settings_field('welcome1', 'Welcome message:', 'yourWelcome_callback', 'top', 'top-options'  );
+
+    add_settings_field('card1_text1', 'card 1 text:', 'card1_text_callback', 'top', 'card1'  );
+    add_settings_field('card1_number1', 'card 1 number:', 'card1_number_callback', 'top', 'card1'  );
+    add_settings_field('card1_fontAwesome1', 'card 1 Font Awesome class:', 'card1_fontAwesome_callback', 'top', 'card1'  );
+
+    add_settings_field('card2_text1', 'card 2 text:', 'card2_text_callback', 'top', 'card2'  );
+    add_settings_field('card2_number1', 'card 2 number:', 'card2_number_callback', 'top', 'card2'  );
+    add_settings_field('card2_fontAwesome1', 'card 2 Font Awesome class:', 'card2_fontAwesome_callback', 'top', 'card2'  );
+
+
+    add_settings_field('card3_text1', 'card 3 text:', 'card3_text_callback', 'top', 'card3'  );
+    add_settings_field('card3_number1', 'card 3 number:', 'card3_number_callback', 'top', 'card3'  );
+    add_settings_field('card3_fontAwesome1', 'card 3 Font Awesome class:', 'card3_fontAwesome_callback', 'top', 'card3'  );
+
+    add_settings_field('card4_text1', 'card 4 text:', 'card4_text_callback', 'top', 'card4'  );
+    add_settings_field('card4_number1', 'card 4 number:', 'card4_number_callback', 'top', 'card4'  );
+    add_settings_field('card4_fontAwesome1', 'card 4 Font Awesome class:', 'card4_fontAwesome_callback', 'top', 'card4'  );
 }
 
 
@@ -150,9 +170,18 @@ function card4_text_callback (){
 
 
 
+ function yourLogoImage_callback (){
+    $preText =  esc_attr( get_option('yourLogo'));
+     echo ' <input type="text" name="yourLogo" placeholder="your Logo Image URL" size="50" value="'.$preText. '" > <p> use external or internal image url , preferred (300 * 50 px) </p>'   ;
+ }
+
+ function yourWelcome_callback (){
+    $preText =  esc_attr( get_option('welcome'));
+     echo ' <input type="text" name="welcome" placeholder="your Logo Image URL" size="50" value="'.$preText. '" > <p> use external or internal image url , preferred (300 * 50 px) </p>'   ;
+ }
 
 
-
+ 
 
 
 function top_options(){
@@ -163,10 +192,6 @@ function card1_options(){
      echo 'First From Left';
  }
 
-function yourLogoImage_callback (){
-    $preText =  esc_attr( get_option('yourLogoImage'));
-     echo ' <input type="text" name="yourLogoImage" placeholder="your Logo Image URL" size="50" value="'.$preText. '" > <p> use external or internal image url , preferred (300 * 50 px) </p>'   ;
- }
 
 
 

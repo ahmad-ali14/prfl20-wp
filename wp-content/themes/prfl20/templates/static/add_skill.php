@@ -173,7 +173,8 @@ array('ID'=>$id), array("%s"), array("%d"));
 //redirect($urll);
 //wp_safe_redirect( $urll );
 show_message('Updated, Refresh the page');
-//die('updated');
+//wp_safe_redirect( site_url() ); 
+//wp_die('updated');
 exit;
 }
 

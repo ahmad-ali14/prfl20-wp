@@ -39,30 +39,67 @@ add_action( 'wp_enqueue_scripts', 'bootstrapstarter_enqueue_scripts' );
 
 
 
-function calling_menus() {
-    add_theme_support('menus');
-    register_nav_menu('primary', 'very Top of your page');
+// function calling_menus() {
+//     add_theme_support('menus');
+//     register_nav_menu('primary', 'very Top of your page');
 
-}
+// }
 
-add_action('init', 'calling_menus');
+//add_action('init', 'calling_menus');
 
 
-function show_msgs_to_admin() {
-    include_once(ABSPATH."wp-admin/includes/plugin.php");
-    if( !is_plugin_active('easing-slider/easing-slider.php') ) {
-        echo '<div id="allert"  class="error">';
-        echo '<p>This theme requires you to install <a href="https://wordpress.org/plugins/easing-slider/"> easing-slider</a> plug-in</p>';
-        echo '</div>';
+// function show_msgs_to_admin() {
+//     include_once(ABSPATH."wp-admin/includes/plugin.php");
+//     if( !is_plugin_active('easing-slider/easing-slider.php') ) {
+//         echo '<div id="allert"  class="error">';
+//         echo '<p>This theme requires you to install <a href="https://wordpress.org/plugins/easing-slider/"> easing-slider</a> plug-in</p>';
+//         echo '</div>';
+//     }
+// }
+
+
+
+//add_action('admin_notices', "show_msgs_to_admin");
+
+if ( ! function_exists( 'prfl20_setup' ) ) {
+    /**
+    * Sets up theme defaults and registers support for various WordPress features
+    *
+    *  It is important to set up these functions before the init hook so that none of these
+    *  features are lost.
+    *
+    *  @since prfl20 1.0
+    */
+    function prfl20_setup() {
+
+
+        create_projects_table();
     }
+
 }
 
+function create_projects_table(){
+    global $wpdb;
+   
+    $table_name =$wpdb->prefix."projects";
+    $charset_collate = $wpdb->get_charset_collate();
+ 
+    $sql = "CREATE TABLE $table_name(
+        id mediumint(9) NOT NULL AUTO_INCREMENT,
+        time datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
+        name text DEFAULT '' NOT NULL,
+        summary text DEFAULT '' NOT NULL,
+        url varchar(55) DEFAULT '' NOT NULL,
+        github text DEFAULT '' NOT NULL,
+        video text DEFAULT '' NOT NULL,
+        languages text DEFAULT '' NOT NULL,
+        date text DEFAULT '' NOT NULL,
+        fontAwesome text DEFAULT '' NOT NULL,
 
-
-add_action('admin_notices', "show_msgs_to_admin");
-
-
-
-
-
-?>
+ 
+        PRIMARY KEY (id) 
+    )$charset_collate; ";
+ 
+     require_once(ABSPATH.'wp-admin/includes/upgrade.php');
+     dbDelta($sql);
+}

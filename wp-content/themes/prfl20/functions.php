@@ -103,3 +103,28 @@ function create_projects_table(){
      require_once(ABSPATH.'wp-admin/includes/upgrade.php');
      dbDelta($sql);
 }
+
+
+function create_certificates_table(){
+    global $wpdb;
+   
+    $table_name =$wpdb->prefix."certificates";
+    $charset_collate = $wpdb->get_charset_collate();
+ 
+    $sql = "CREATE TABLE $table_name(
+        id mediumint(9) NOT NULL AUTO_INCREMENT,
+        time datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
+        name text DEFAULT '' NOT NULL,
+        provider text DEFAULT '' NOT NULL,
+        url varchar(55) DEFAULT '' NOT NULL,
+        host text DEFAULT '' NOT NULL,
+        photo text DEFAULT '' NOT NULL,
+     
+
+ 
+        PRIMARY KEY (id) 
+    )$charset_collate; ";
+ 
+     require_once(ABSPATH.'wp-admin/includes/upgrade.php');
+     dbDelta($sql);
+}

@@ -52,6 +52,10 @@ function top_settings (){
 
     register_setting( 'top-data-group', 'yourLogo');
     register_setting( 'top-data-group', 'welcome');
+    register_setting( 'top-data-group', 'yourPhone');
+    register_setting( 'top-data-group', 'yourEmail');
+
+
 
     register_setting( 'top-data-group', 'card1_text');
     register_setting( 'top-data-group', 'card1_number');
@@ -81,6 +85,8 @@ function top_settings (){
 
     add_settings_field('yourLogo1', 'Logo Image URL:', 'yourLogoImage_callback', 'top', 'top-options'  );
     add_settings_field('welcome1', 'Welcome message:', 'yourWelcome_callback', 'top', 'top-options'  );
+    add_settings_field('phone1', 'your phone :', 'yourPhone_callback', 'top', 'top-options'  );
+    add_settings_field('email1', 'your Email:', 'yourEEmail_callback', 'top', 'top-options'  );
 
     add_settings_field('card1_text1', 'card 1 text:', 'card1_text_callback', 'top', 'card1'  );
     add_settings_field('card1_number1', 'card 1 number:', 'card1_number_callback', 'top', 'card1'  );
@@ -177,7 +183,17 @@ function card4_text_callback (){
 
  function yourWelcome_callback (){
     $preText =  esc_attr( get_option('welcome'));
-     echo ' <input type="text" name="welcome" placeholder="your Logo Image URL" size="50" value="'.$preText. '" > <p> use external or internal image url , preferred (300 * 50 px) </p>'   ;
+     echo ' <input type="text" name="welcome" placeholder="your Logo Image URL" size="50" value="'.$preText. '" > <p> messgae will be shown under the header </p>'   ;
+ }
+
+ function yourPhone_callback (){
+    $preText =  esc_attr( get_option('yourPhone'));
+     echo ' <input type="text" name="yourPhone" placeholder="your Logo Image URL" size="50" value="'.$preText. '" > <p> full phone with country code. </p>'   ;
+ }
+
+ function yourEEmail_callback (){
+    $preText =  esc_attr( get_option('yourEmail'));
+     echo ' <input type="text" name="yourEmail" placeholder="your Logo Image URL" size="50" value="'.$preText. '" > <p>will be used in the mail icon on the top left.</p>'   ;
  }
 
 

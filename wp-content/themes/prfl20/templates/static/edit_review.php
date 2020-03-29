@@ -6,19 +6,18 @@ ob_start();
 if (isset($_GET['id']) && $_GET['action']=='delete') {
     $id = $_GET['id'];
     global $wpdb;
-    $wpdb->delete( "wp_projects", array( 'id' => $id ) );
+    $wpdb->delete( "wp_reviews", array( 'id' => $id ) );
     die('deleted');
+    exit;
 
 }
 
 if (isset($_GET['id'])) {
   $id = $_GET['id'];
-  echo ' <h1 class="wp-heading-inline"> Edit Project </h1>';
-    } else {
-        echo ' <h1 class="wp-heading-inline"> Add New Project </h1>';
+  echo ' <h1 class="wp-heading-inline"> Edit Review </h1>';
     }  
     global $wpdb;
-    $pr = $wpdb->get_results("SELECT * FROM wp_projects WHERE id = $id LIMIT 1");
+    $pr = $wpdb->get_results("SELECT * FROM wp_reviews WHERE id = $id LIMIT 1");
     // if (!$pr) {
     //     die('No record with id: ' . $id);
     // }

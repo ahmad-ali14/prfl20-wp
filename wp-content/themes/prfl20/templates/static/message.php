@@ -3,6 +3,11 @@
 <?php
 ob_start();
 
+if(!isset($id)){
+    die('No Id, choose message to view first!');
+    exit;
+}
+
 if (isset($_GET['id']) && $_GET['action']=='delete') {
     $id = $_GET['id'];
     global $wpdb;
@@ -14,10 +19,7 @@ if (isset($_GET['id']) && $_GET['action']=='delete') {
 
 if (isset($_GET['id'])) {
   $id = $_GET['id'];
-  if(!$id){
-      die('No Id, choose message to view first!');
-      exit;
-  }
+ 
   echo ' <h1 class="wp-heading-inline"> View Message </h1>';
     } 
     global $wpdb;

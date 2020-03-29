@@ -140,7 +140,7 @@
                       <a
                         class="nav-link "
                         target="_blank "
-                        href="mailto:aallii300300@gmail.com"
+                        href="mailto:<?php echo get_option('yourEmail'); ?>"
                         title="Send Me a message"
                         ><span
                           class="mr-2 d-none d-lg-inline text-gray-600 small"
@@ -148,15 +148,15 @@
                         ><img
                           class="img-profile rounded-circle"
                           src="https://dl.dropbox.com/s/nyjbgdughrzq7br/email-circle-icon-62.png?dl=0"
-                          alt="Ahmad-Ali-ahmad-ali-logo-Uk"
-                          width="40px"
+                          alt="prfl20-logo-UK"
+                          width="35px"
 
                       /></a>
                     </li>
                     <li class="nav-item dropdown no-arrow">
                       <a
                         class="nav-link "
-                        href="tel:+447383164194"
+                        href="tel:<?php echo get_option('yourPhone'); ?>"
                         title="Call me"
                         ><span
                           class="mr-2 d-none d-lg-inline text-gray-600 small"
@@ -164,7 +164,7 @@
                         ><img
                           class="img-profile rounded-circle"
                           src="https://dl.dropbox.com/s/jq67lusuwgpwbme/phone.png?dl=0"
-                          width="40px"
+                          width="35px"
                       /></a>
                     </li>
                   </div>

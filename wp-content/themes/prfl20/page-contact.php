@@ -14,7 +14,22 @@ get_header()
             <div class="card-body">
                 <p> You Are Welcome to my space ..</p>
                 <p> Tell me about your project and I will give you a reflection, or Just say Hi! </p><br>
-                <?php echo do_shortcode('[contact-form-7 id="53" title="Contact form 1_copy"]'); ?>
+                <form method="post" action="<?php home_url() . '/wp-admin/admin.php'; ?>" >
+                        <div class="form-group row"><label for="inputEmail" class="col-sm-3 col-md-3 col-form-label">Email: *</label>
+                            <div class="col-sm-8 col-md-8"><input type="email" class="form-control" name="inputEmail" placeholder="Email" value=""></div>
+                        </div>
+                        <div class="form-group row"><label for="inputName" class="col-sm-3 col-md-3 col-form-label">Name: *</label>
+                            <div class="col-sm-8 col-md-8"><input type="text" class="form-control" name="inputName" placeholder="Name" value=""></div>
+                        </div>
+                        <div class="form-group row"><label for="inputMessage" class="col-sm-3 col-md-3 col-form-label">Message: *</label>
+                            <div class="col-sm-8 col-md-8"><textarea type="text" class="form-control" name="inputMessage" rows="5" cols="33" placeholder="Message"></textarea></div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col col-md-4"></div>
+                            <div class="col-sm-10 col-md-8 "><button type="submit" name="contact_btn"  class="btn btn-primary">Send Message</button></div>
+                        </div>
+                    </form>
+
 
             </div>
 

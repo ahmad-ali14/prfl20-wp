@@ -26,7 +26,7 @@ function add_admin_options (){
     add_submenu_page('bio', 'bio', 'bio', 'manage_options', 'bio', 'theme_init' );
 
     add_menu_page('reviews', 'reviews', 'manage_options', 'reviews', 'reviews_init', 'dashicons-id', 8);
-    add_submenu_page('reviews', 'reviews', 'reviews', 'manage_options', 'reviews', 'reviews_init' );
+    add_submenu_page('reviews', 'edit review', 'edit review', 'manage_options', 'edit_review', 'edit_reviews_init' );
 
 
 
@@ -63,6 +63,10 @@ function add_admin_options (){
 function reviews_init(){
     require_once( get_template_directory().'/templates/static/reviews.php');
 
+}
+
+function edit_reviews_init (){
+    require_once( get_template_directory().'/templates/static/edit_review.php');
 }
 
 function view_message (){

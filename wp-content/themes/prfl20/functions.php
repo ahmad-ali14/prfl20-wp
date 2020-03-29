@@ -196,3 +196,24 @@ function create_skills_table(){
      require_once(ABSPATH.'wp-admin/includes/upgrade.php');
      dbDelta($sql);
 }
+
+
+function create_subscribers_table(){
+    global $wpdb;
+   
+    $table_name =$wpdb->prefix."subscribers";
+    $charset_collate = $wpdb->get_charset_collate();
+ 
+    $sql = "CREATE TABLE $table_name(
+        id mediumint(9) NOT NULL AUTO_INCREMENT,
+        time datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
+        email text DEFAULT '' NOT NULL,
+
+ 
+        PRIMARY KEY (id) 
+    )$charset_collate; ";
+ 
+     require_once(ABSPATH.'wp-admin/includes/upgrade.php');
+     dbDelta($sql);
+}
+

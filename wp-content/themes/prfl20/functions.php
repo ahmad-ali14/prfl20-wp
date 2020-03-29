@@ -141,11 +141,33 @@ function create_education_table(){
         time datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
         start text DEFAULT '' NOT NULL,
         end text DEFAULT '' NOT NULL,
-        degree varchar(55) DEFAULT '' NOT NULL,
+        degree text DEFAULT '' NOT NULL,
         university text DEFAULT '' NOT NULL,
         country text DEFAULT '' NOT NULL,
      
 
+ 
+        PRIMARY KEY (id) 
+    )$charset_collate; ";
+ 
+     require_once(ABSPATH.'wp-admin/includes/upgrade.php');
+     dbDelta($sql);
+}
+
+
+function create_reviews_table(){
+    global $wpdb;
+   
+    $table_name =$wpdb->prefix."reviews";
+    $charset_collate = $wpdb->get_charset_collate();
+ 
+    $sql = "CREATE TABLE $table_name(
+        id mediumint(9) NOT NULL AUTO_INCREMENT,
+        time datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
+        name text DEFAULT '' NOT NULL,
+        rel text DEFAULT '' NOT NULL,  
+        text text DEFAULT '' NOT NULL,
+     
  
         PRIMARY KEY (id) 
     )$charset_collate; ";

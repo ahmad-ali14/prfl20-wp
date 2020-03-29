@@ -91,11 +91,11 @@
               <button class="btn btn-link d-md-none rounded-circle mr-3">
                 <i class="fa fa-bars"></i>
               </button>
-              <a href="https://www.ahmad-ali.co.uk/"
+              <a href=""
                 ><img
                   id="log_img"
-                  src="https://dl.dropbox.com/s/2du08hmcfnaqv4p/logo.png?dl=0"
-                  alt="Ahmad-Ali-ahmad-ali-logo-Uk"
+                  src="<?php echo get_option('yourLogo'); ?> "
+                  alt="logo"
               /></a>
               <ul class="nav navbar-nav ml-auto hidden-xs d-none d-md-block">
                 <div class="collapse navbar-collapse ">

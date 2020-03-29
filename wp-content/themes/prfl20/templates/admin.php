@@ -11,6 +11,8 @@
 
 require_once( get_template_directory().'/assets/assets-functions.php');
 
+
+
 function add_admin_options (){
    
     add_admin_menu_separator(6);
@@ -430,6 +432,39 @@ header("Location:" .home_url());
 exit;
 }
 
+
+if (isset($_POST['contact_btn'])) {
+
+    if (    
+        empty($_POST['inputEmail']) ||
+        empty($_POST['inputName']) ||
+        empty($_POST['inputMessage']) ) {
+           
+            header("Location:" .home_url());
+            exit;
+            }
+    
+    // Get form values.
+    $name = (!empty($_POST['inputName'])) ? sanitize_text_field($_POST['inputName']) : '';
+    $rel = (!empty($_POST['inputEmail'])) ? sanitize_text_field($_POST['inputEmail']) : '';
+    $text = (!empty($_POST['inputMessage'])) ? sanitize_text_field($_POST['inputMessage']) : '';
+    
+    $table_name = $wpdb->prefix . "messages";
+    $wpdb->insert(
+        $table_name,
+        array(
+            'time' => current_time('mysql'),
+            'name' => $name,
+            'email' => $rel,
+            'message' => $text,
+    
+       
+        )
+    );
+    
+    header("Location:" .home_url());
+    exit;
+}
 
 
 

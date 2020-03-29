@@ -14,6 +14,10 @@ if (isset($_GET['id']) && $_GET['action']=='delete') {
 
 if (isset($_GET['id'])) {
   $id = $_GET['id'];
+  if(!$id){
+      die('No Id, choose message to view first!');
+      exit;
+  }
   echo ' <h1 class="wp-heading-inline"> View Message </h1>';
     } 
     global $wpdb;

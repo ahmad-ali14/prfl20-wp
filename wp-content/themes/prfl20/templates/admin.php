@@ -49,7 +49,7 @@ function add_admin_options (){
     
     }, 'dashicons-email', 8);
 
-     add_submenu_page('messages', 'Message', 'Message', 'manage_options', 'message', 'view_message');
+     add_submenu_page('messages', 'Message', 'View Message', 'manage_options', 'message', 'view_message');
 
     add_action('admin_init', 'theme_settings');
     add_action('admin_init', 'top_settings');

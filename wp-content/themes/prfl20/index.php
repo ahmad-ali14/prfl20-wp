@@ -267,7 +267,7 @@ get_header()
                                 portfolio - feb 2020                                    &nbsp;&nbsp;&nbsp;
                                 <a href="https://www.ahmad-ali.co.uk/" title="visit Live Demo" target="_blank" class="btn-link text-muted"><i class="fas fa-external-link-alt" aria-hidden="true"> visit</i></a>
                                 &nbsp;&nbsp;&nbsp;
-                                <a title="View more Details" class="btn-link text-muted" href="http://localhost/portfolio/project?id=8"><i class="fas fa-info-circle" aria-hidden="true"> details</i></a>
+                                <a title="View more Details" class="btn-link text-muted" href="#"><i class="fas fa-info-circle" aria-hidden="true"> details</i></a>
                             </p>
                         </div>';
                         }
@@ -389,7 +389,7 @@ get_header()
                         </div>
 
                     <?php }
-                    if(!$row) { echo '<p style="margin-bottom: 5%;"><i class="fas fa-chevron-right"></i> CS50\'s Introduction to Computer Science - Harvard University, USA ( EDX )&nbsp;<a href="https://www.edx.org/course/cs50s-introduction-to-computer-science" title="visit course page" target="_blank"><button class="btn btn-link text-muted">  <i class="fas fa-external-link-alt"> visit</i>  </button></a><a title="view certificate" href="/api/c/5e2dc13af72181d945f93185"><button class="btn btn-link text-muted">  <i class="fas fa-graduation-cap"> details</i> </button></a></p>'; }
+                    if(!$row) { echo '<p style="margin-bottom: 5%;"><i class="fas fa-chevron-right"></i> CS50\'s Introduction to Computer Science - Harvard University, USA ( EDX )&nbsp;<a href="https://www.edx.org/course/cs50s-introduction-to-computer-science" title="visit course page" target="_blank"><button class="btn btn-link text-muted">  <i class="fas fa-external-link-alt"> visit</i>  </button></a><a title="view certificate" href="#"><button class="btn btn-link text-muted">  <i class="fas fa-graduation-cap"> details</i> </button></a></p>'; }
 
                     ?>
 
@@ -552,7 +552,19 @@ get_header()
             </div>
 
 
-                            <?php } ?>
+                            <?php }
+                            
+                            if(!$row){
+                                echo '<div class="tweet">
+                                <div class="content">
+                                    <p class="reviewText"> Your Review Will be here, You have 115 letters.</p>
+                                    <p class="reviewAuthor"> Your Name</p><i class="relation">I worked directly for You</i>
+                                </div>
+                            </div>';
+                            }
+                            
+                            
+                            ?>
 
          
           <br/>

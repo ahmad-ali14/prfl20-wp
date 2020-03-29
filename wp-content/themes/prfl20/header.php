@@ -55,7 +55,7 @@
               >
                 <div>
                   <p>
-                    <a class="nav-link " href="/" style="color: black;">Home</a>
+                    <a class="nav-link " href="<?php home_url()?>" style="color: black;">Home</a>
                   </p>
                   <p>
                     <a class="nav-link " href="<?php home_url().'/projects'?>" style="color: black;"
@@ -65,14 +65,14 @@
                   <p>
                     <a
                       class="nav-link "
-                      href="/education"
+                      href="<?php home_url().'/education' ?>"
                       style="color: black;"
                     >
                       Education
                     </a>
                   </p>
                   <p>
-                    <a class="nav-link " href="/contact" style="color: black;">
+                    <a class="nav-link " href="<?php home_url().'/contact' ?>" style="color: black;">
                       Contact
                     </a>
                   </p>

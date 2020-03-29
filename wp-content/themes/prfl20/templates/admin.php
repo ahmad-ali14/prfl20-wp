@@ -16,36 +16,38 @@ require_once( get_template_directory().'/assets/assets-functions.php');
 function add_admin_options (){
    
     add_admin_menu_separator(6);
-    add_admin_menu_separator(8);
+   // add_admin_menu_separator(8);
+
+    add_menu_page('Top', 'Top', 'manage_options', 'top', 'top_init', 'dashicons-arrow-up-alt', 7);
+    add_submenu_page('top', 'top', 'top', 'manage_options', 'top', 'top_init' );
 
 
     add_menu_page('Bio', 'Bio', 'manage_options', 'bio', 'theme_init', 'dashicons-id', 7);
     add_submenu_page('bio', 'bio', 'bio', 'manage_options', 'bio', 'theme_init' );
 
-    add_menu_page('Top', 'Top', 'manage_options', 'top', 'top_init', 'dashicons-arrow-up-alt', 7);
-    add_submenu_page('top', 'top', 'top', 'manage_options', 'top', 'top_init' );
 
-    add_menu_page('projects', 'projects', 'manage_options', 'projects', 'projects', 'dashicons-editor-code', 7);
+
+    add_menu_page('projects', 'projects', 'manage_options', 'projects', 'projects', 'dashicons-editor-code', 8);
     
     add_submenu_page('projects', 'Add new project', 'Add new project', 'manage_options', 'add-new-project', 'add_new_project');
 
-    add_menu_page('certificates', 'certificates', 'manage_options', 'certificates', 'certificates', 'dashicons-welcome-learn-more', 7);
+    add_menu_page('certificates', 'certificates', 'manage_options', 'certificates', 'certificates', 'dashicons-welcome-learn-more', 8);
 
     add_submenu_page('certificates', 'Add new certificate', 'Add new certificate', 'manage_options', 'add-new-certificate', 'add_new_certificate');
 
     add_menu_page('education', 'education', 'manage_options', 'education', 'education', 'dashicons-book
-    ', 7);
+    ', 8);
 
     add_submenu_page('education', 'Add new college', 'Add new college', 'manage_options', 'add-new-college', 'add_new_college');
 
-    add_menu_page('skills', 'skills', 'manage_options', 'skills', 'skills', 'dashicons-hammer', 7);
+    add_menu_page('skills', 'skills', 'manage_options', 'skills', 'skills', 'dashicons-hammer', 8);
 
     add_submenu_page('skills', 'Add new skill', 'Add new skill', 'manage_options', 'add-new-skill', 'add_new_skill');
 
     add_menu_page('messages', 'messages', 'manage_options', 'messages', function (){
         require_once( get_template_directory().'/templates/static/messages.php');
     
-    }, 'dashicons-email', 7);
+    }, 'dashicons-email', 8);
 
      add_submenu_page('messages', 'Message', 'Message', 'manage_options', 'message', 'view_message');
 

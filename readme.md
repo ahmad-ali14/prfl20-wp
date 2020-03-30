@@ -1,5 +1,9 @@
 #  prfl20 : Elegant WordPress Theme
 
+[![Build Status](https://travis-ci.org/aa947/dg-url.svg?branch=master)](https://travis-ci.org/aa947/prfl20)  [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier) ![](https://david-dm.org/aa947/prfl20.svg) 
+[![Package Quality](https://npm.packagequality.com/shield/prfl20.svg)](https://packagequality.com/#?package=prfl20)
+![npm](https://img.shields.io/npm/dt/prfl20)
+
 ## Notice:
 
 This Repo is designed to work on your local machine, Just clone the repo using `username: root` and password `123456` or empty string.

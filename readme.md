@@ -27,6 +27,18 @@ https://github.com/aa947/portfolio
 https://www.ahmad-ali.co.uk/
 
 
+## contact
+
+ https://www.ahmad-ali.co.uk/
+ 
+ ahmadali14@acm.org
+ 
+## licence 
+
+ [![License: CC BY 4.0](https://licensebuttons.net/l/by/4.0/80x15.png)](https://creativecommons.org/licenses/by/4.0/)
+
+
+
 ## عربي
 عدد ايام العمل : 4
 

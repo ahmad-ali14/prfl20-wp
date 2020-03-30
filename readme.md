@@ -1,6 +1,11 @@
 # prfl20 : Awesome WordPress Theme
 
-## English:
+## Notice:
+
+This Repo is designed to work on your local machine, Just clone the repo using `username: root` and password `123456` or empty string.
+then activate the theme and Happy codding.
+
+if you want the theme only, follow the download link below
 
 ## Direct Download of the Theme only ( Zip file ): 
 https://www.dropbox.com/s/onncdi935z7z0fd/prfl20_v1.0.0.zip?dl=1
@@ -9,12 +14,12 @@ https://www.dropbox.com/s/onncdi935z7z0fd/prfl20_v1.0.0.zip?dl=1
 
 http://prfl20.byethost5.com/
 
-## same them ( Node and react and MongoDb )
+## same theme ( Node and react and MongoDb )
 
 https://github.com/aa947/portfolio
 
 
-## this them is used here: 
+## this theme is used here: 
 
 https://www.ahmad-ali.co.uk/
 

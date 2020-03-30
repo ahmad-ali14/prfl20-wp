@@ -1,4 +1,4 @@
-# prfl20 : Elegent WordPress Theme
+#  prfl20 : Elegant WordPress Theme
 
 ## Notice:
 

@@ -17,7 +17,10 @@ if you want the theme only, follow the download link below
 ## For the theme only and dwonload the latest version pleas check this Repo: 
 https://github.com/aa947/prfl20-theme
 
-## or dow
+## Download the latest version ( Zip file ): 
+https://github.com/aa947/prfl20-theme/archive/1.1.2.zip
+
+
 ## Theme website: 
 
 http://prfl20.byethost5.com/

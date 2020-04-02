@@ -8,6 +8,8 @@
 This Repo is designed to work on your local machine, Just clone the repo using `username: root` and password `123456` or empty string.
 then activate the theme and Happy codding.
 
+** WordPress 5.3.2 is already installed with this Repo
+
 if you want the theme only, follow the download link below
 
 ## Direct Download of the Theme only ( Zip file ): 

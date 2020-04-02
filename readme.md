@@ -12,9 +12,8 @@ then activate the theme and Happy codding.
 
 if you want the theme only, follow the download link below
 
-## Direct Download of the Theme only ( Zip file ): 
-https://www.dropbox.com/s/onncdi935z7z0fd/prfl20_v1.0.0.zip?dl=1
-
+## For the theme only and dwonload the latest version pleas check this Repo: 
+https://github.com/aa947/prfl20-theme
 ## Theme website: 
 
 http://prfl20.byethost5.com/

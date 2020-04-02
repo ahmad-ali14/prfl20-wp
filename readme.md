@@ -1,6 +1,8 @@
 #  prfl20 : Elegant WordPress Theme
 
-[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier) ![](https://david-dm.org/aa947/prfl20.svg) 
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier) ![](https://david-dm.org/aa947/prfl20.svg) 
+[![version](https://img.shields.io/badge/version-1.1.2-blue)](#)
+
 
 
 ## Notice:
@@ -14,6 +16,8 @@ if you want the theme only, follow the download link below
 
 ## For the theme only and dwonload the latest version pleas check this Repo: 
 https://github.com/aa947/prfl20-theme
+
+## or dow
 ## Theme website: 
 
 http://prfl20.byethost5.com/

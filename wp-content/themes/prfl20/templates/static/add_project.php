@@ -6,7 +6,8 @@ ob_start();
 if (isset($_GET['id']) && $_GET['action']=='delete') {
     $id = $_GET['id'];
     global $wpdb;
-    $wpdb->delete( "wp_projects", array( 'id' => $id ) );
+    $table_name = $wpdb->prefix . "projects";
+    $wpdb->delete( $table_name, array( 'id' => $id ) );
     die('deleted');
 
 }

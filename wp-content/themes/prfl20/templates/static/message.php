@@ -11,7 +11,8 @@ if(!isset($id)){
 if (isset($_GET['id']) && $_GET['action']=='delete') {
     $id = $_GET['id'];
     global $wpdb;
-    $wpdb->delete( "wp_messages", array( 'id' => $id ) );
+    $table_name = $wpdb->prefix . "messages";
+    $wpdb->delete( $table_name, array( 'id' => $id ) );
     die('deleted');
     exit;
 
@@ -23,7 +24,9 @@ if (isset($_GET['id'])) {
   echo ' <h1 class="wp-heading-inline"> View Message </h1>';
     } 
     global $wpdb;
-    $doc = $wpdb->get_results("SELECT * FROM wp_messages WHERE id = $id LIMIT 1");
+    $table_name = $wpdb->prefix . "messages";
+
+    $doc = $wpdb->get_results("SELECT * FROM $table_name WHERE id = $id LIMIT 1");
   
     $email = $doc[0]->email;
     $message = $doc[0]->message;

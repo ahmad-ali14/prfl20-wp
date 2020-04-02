@@ -9,7 +9,8 @@
 
 <?php
 global $wpdb;
-$row = $wpdb->get_results("SELECT * FROM wp_skills");
+$table_name = $wpdb->prefix . "skills";
+$row = $wpdb->get_results("SELECT * FROM $table_name");
 ?>
 
 <table class="wp-list-table widefat fixed striped pages">

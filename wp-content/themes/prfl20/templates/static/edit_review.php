@@ -11,7 +11,8 @@ if(!isset($_GET['id'])){
 if (isset($_GET['id']) && $_GET['action']=='delete') {
     $id = $_GET['id'];
     global $wpdb;
-    $wpdb->delete( "wp_reviews", array( 'id' => $id ) );
+    $table_name = $wpdb->prefix . "reviews";
+    $wpdb->delete( $table_name, array( 'id' => $id ) );
     die('deleted');
     exit;
 
@@ -22,7 +23,8 @@ if (isset($_GET['id'])) {
   echo ' <h1 class="wp-heading-inline"> Edit Review </h1>';
     }  
     global $wpdb;
-    $pr = $wpdb->get_results("SELECT * FROM wp_reviews WHERE id = $id LIMIT 1");
+    $table_name = $wpdb->prefix . "reviews";
+    $pr = $wpdb->get_results("SELECT * FROM $table_name WHERE id = $id LIMIT 1");
     // if (!$pr) {
     //     die('No record with id: ' . $id);
     // }

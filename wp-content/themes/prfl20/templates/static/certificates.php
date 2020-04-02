@@ -9,7 +9,8 @@
 
 <?php
 global $wpdb;
-$row = $wpdb->get_results("SELECT * FROM wp_certificates");
+$table_name = $wpdb->prefix . "certificates";
+$row = $wpdb->get_results("SELECT * FROM $table_name);
 ?>
 
 <table class="wp-list-table widefat fixed striped pages">

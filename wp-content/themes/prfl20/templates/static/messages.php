@@ -8,7 +8,9 @@
 
 <?php
 global $wpdb;
-$row = $wpdb->get_results("SELECT * FROM wp_messages");
+$table_name = $wpdb->prefix . "messages";
+
+$row = $wpdb->get_results("SELECT * FROM $table_name");
 ?>
 
 <table class="wp-list-table widefat fixed striped pages">

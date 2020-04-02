@@ -63,23 +63,23 @@ add_action('wp_enqueue_scripts', 'wpa_90820');
 add_action('after_setup_theme', 'prfl20_setup');
 
 
-function prfl20_setup() {
+// function prfl20_setup() {
 
-    create_projects_table();
-    create_certificates_table();
-    create_skills_table();
-    create_subscribers_table();
-    create_reviews_table();
-    create_education_table();
-    create_messages_table();
-    creat_homePage_default();
-    creat_projects_page();
-    creat_project_page();
-    creat_certificates_page();
-    creat_certificate_page();
-    creat_contact_page();
+//     create_projects_table();
+//     create_certificates_table();
+//     create_skills_table();
+//     create_subscribers_table();
+//     create_reviews_table();
+//     create_education_table();
+//     create_messages_table();
+//     creat_homePage_default();
+//     creat_projects_page();
+//     creat_project_page();
+//     creat_certificates_page();
+//     creat_certificate_page();
+//     creat_contact_page();
 
-}
+// }
 
 
 
@@ -285,7 +285,6 @@ function creat_homePage_default(){
                'post_author'   => 1
            ); 
            // Insert the post into the database
-           wp_insert_post( $homepage );
            $homepage_id =  wp_insert_post( $homepage );
            // set this page as homepage
            update_option('show_on_front', 'page');
@@ -300,6 +299,10 @@ function creat_homePage_default(){
 
    function creat_projects_page(){
 
+    if(post_exists('projects')){
+        return false;
+    }
+
            // Create homepage
            $page = array(
                'post_type'    => 'page',
@@ -309,7 +312,6 @@ function creat_homePage_default(){
                'post_author'   => 1
            ); 
            // Insert the post into the database
-           wp_insert_post( $page );
            $page_id =  wp_insert_post( $page );
            if( $page_id ){
 
@@ -321,6 +323,10 @@ function creat_homePage_default(){
 
    
    function creat_project_page(){
+    if(post_exists('project')){
+        return false;
+    }
+
 
            // Create homepage
            $page = array(
@@ -342,6 +348,9 @@ function creat_homePage_default(){
 
 
    function creat_certificates_page(){
+    if(post_exists('certificates')){
+        return false;
+    }
 
            // Create homepage
            $page = array(
@@ -363,6 +372,9 @@ function creat_homePage_default(){
 
 
    function creat_certificate_page(){
+    if(post_exists('certificate')){
+        return false;
+    }
 
            // Create homepage
            $page = array(
@@ -384,6 +396,9 @@ function creat_homePage_default(){
 
 
    function creat_contact_page(){
+    if(post_exists('contact')){
+        return false;
+    }
 
            // Create homepage
            $page = array(
